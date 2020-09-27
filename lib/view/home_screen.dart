@@ -12,6 +12,8 @@ import 'package:grow_lah/view/commuication_detail.dart';
 import 'package:grow_lah/view/communication_section.dart';
 import 'package:grow_lah/view/feeds_detail_page.dart';
 import 'package:grow_lah/view/monitor_screen.dart';
+import 'package:grow_lah/view/scan_spot.dart';
+import 'package:grow_lah/view/take_picture.dart';
 import 'package:grow_lah/view/video_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -239,10 +241,9 @@ class _HomeScreenState extends State<HomeScreen> {
       case 3:break;
       case 4:   Navigator.push(context, MaterialPageRoute(builder: (context)=>
       DetailCommunication())); break;
+      case 5: Navigator.push(context, MaterialPageRoute(builder: (context)=>
+      TakePicture()));break;
     }
   }
 
-  void moveToPage() {
-
-  }
 }

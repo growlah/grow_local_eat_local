@@ -30,6 +30,9 @@ dependencies:
   video_player:
   chewie:
   cached_network_image:
+  path_provider:
+  image_picker:
+  camera:
 dev_dependencies:
   flutter_test:
     sdk: flutter

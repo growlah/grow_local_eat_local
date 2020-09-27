@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grow_lah/utils/bazier_clip.dart';
 import 'package:grow_lah/view/create_feed.dart';
@@ -40,6 +41,8 @@ class AppConfig{
      color: Colors.grey,
    );
  }
+ static NeumorphicStyle neuStyle=NeumorphicStyle(color: Colors.white12);
+  static NeumorphicBoxShape neuShape= NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0)));
  static appBar(String title,BuildContext context){
     return AppBar(
       elevation: 0.0,
