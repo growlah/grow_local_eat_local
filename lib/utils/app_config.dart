@@ -4,7 +4,6 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/utils/bazier_clip.dart';
-import 'package:grow_lah/view/create_feed.dart';
 
 class AppConfig{
   static String growLah='GrowLah';

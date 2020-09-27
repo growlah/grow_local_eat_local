@@ -61,4 +61,5 @@ class Assets{
   static String cloud='images/cloud.png';
   static String yellowCircle='images/yello_circle.png';
   static String nav='images/nav.png';
+  static String shareIcon='images/share.png';
 }

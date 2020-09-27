@@ -115,6 +115,7 @@ flutter:
     - images/cloud.png
     - images/nav.png
     - images/yello_circle.png
+    - images/share.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
