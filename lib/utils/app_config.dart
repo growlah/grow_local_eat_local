@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/utils/bazier_clip.dart';
 import 'package:grow_lah/view/create_feed.dart';
 
@@ -41,7 +42,7 @@ class AppConfig{
      color: Colors.grey,
    );
  }
- static NeumorphicStyle neuStyle=NeumorphicStyle(color: Colors.white12);
+ static NeumorphicStyle neuStyle=NeumorphicStyle(color: Colors.grey[100]);
   static NeumorphicBoxShape neuShape= NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0)));
  static appBar(String title,BuildContext context){
     return AppBar(
@@ -61,8 +62,15 @@ class AppConfig{
       ),
       actions: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Icon(Icons.notifications_none,color: Colors.green,size: 20.0,),
+          padding: const EdgeInsets.only(left:10.0,right: 10.0),
+          child: Image.asset(Assets.stock,color: Colors.green,height: 15.0,
+          width: 15.0,),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left:10.0,right: 20.0),
+          child: Image.asset(Assets.notification,color: Colors.green,
+            height: 18.0,
+            width: 18.0,),
         )
       ],
     );

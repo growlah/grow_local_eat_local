@@ -33,76 +33,78 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
     // TODO: implement build
     return Scaffold(
       appBar: AppConfig.appBar('SCAN & SPOT', context),
-      body:Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          physics: ScrollPhysics(parent: ScrollPhysics()),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Neumorphic(
-                  style:AppConfig.neuStyle,
-                  boxShape: AppConfig.neuShape,
-                  child: Container(
-                    height: 272.0,
-                      width: 374.0,
-                      child: Image.file(File(widget.imagePath),fit: BoxFit.cover,)),
+      body:Container(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            physics: ScrollPhysics(parent: ScrollPhysics()),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Neumorphic(
+                    style:AppConfig.neuStyle,
+                    boxShape: AppConfig.neuShape,
+                    child: Container(
+                      height: 272.0,
+                        width: 374.0,
+                        child: Image.file(File(widget.imagePath),fit: BoxFit.cover,)),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top:20.0,left: 10.0,right: 10.0),
-                child: Row(
-                  children: <Widget>[
-                    Neumorphic(
-                      style:AppConfig.neuStyle,
-                      boxShape: AppConfig.neuShape,
-                      child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Rose',style: TextStyle(fontSize: 18.0,
-                            color: Colors.green),),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left:40.0,right: 10.0),
-                      child: Neumorphic(
+                Padding(
+                  padding: const EdgeInsets.only(top:20.0,left: 10.0,right: 10.0),
+                  child: Row(
+                    children: <Widget>[
+                      Neumorphic(
                         style:AppConfig.neuStyle,
                         boxShape: AppConfig.neuShape,
                         child: Container(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Rosaceae family'
-                              ,style: TextStyle(fontSize: 18.0,
-                                  color: Colors.green),),
+                              child: Text('Rose',style: TextStyle(fontSize: 18.0,
+                              color: Colors.green),),
                             )),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(left:40.0,right: 10.0),
+                        child: Neumorphic(
+                          style:AppConfig.neuStyle,
+                          boxShape: AppConfig.neuShape,
+                          child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Rosaceae family'
+                                ,style: TextStyle(fontSize: 18.0,
+                                    color: Colors.green),),
+                              )),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top:20.0,bottom: 20.0,left: 10.0,right: 10.0),
-                child: getWeatherCards(),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:10.0),
-                child: Text('About',
-                  style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left:10.0,top: 10.0),
-                child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing'
-                    'elit. Facilisis lectus at a vulputate pellentesque'
-                    'aliquet velit odio nullam. Mattis ut est ut enim.'
-                    'Nullam lobortis dolor quis non mauris, dui sed'
-                    'nunc quam. Gravida commodo vel at dignissim'
-                    'integer.',
-                  style: TextStyle(color: Colors.green,fontSize: 12.0),),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top:20.0,bottom: 20.0,left: 10.0,right: 10.0),
+                  child: getWeatherCards(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:10.0),
+                  child: Text('About',
+                    style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:10.0,top: 10.0),
+                  child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing'
+                      'elit. Facilisis lectus at a vulputate pellentesque'
+                      'aliquet velit odio nullam. Mattis ut est ut enim.'
+                      'Nullam lobortis dolor quis non mauris, dui sed'
+                      'nunc quam. Gravida commodo vel at dignissim'
+                      'integer.',
+                    style: TextStyle(color: Colors.green,fontSize: 12.0),),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -124,16 +126,20 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Neumorphic(
-                      style: NeumorphicStyle(color: Colors.white12),
-                      boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
-                      child: Container(
+                    // Neumorphic(
+                    //   style: NeumorphicStyle(color: Colors.white12),
+                    //   boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
+                    //   child: Container(
+                    //     height: 80.0,
+                    //     width: 90.0,
+                    //     child:Icon(getImage(position),color: Colors.green,
+                    //     size: 30.0,) ,
+                    //   ),
+                    // ),
+                    Container(
+                      width: 90.0,
                         height: 80.0,
-                        width: 90.0,
-                        child:Icon(getImage(position),color: Colors.green,
-                        size: 30.0,) ,
-                      ),
-                    ),
+                        child: Image.asset(getImage(position))),
                     Text(getTitle(position),style:TextStyle(
                       color: Colors.green,fontSize: 12.0
                     ),),
@@ -147,9 +153,9 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
     );
   }
 
-  IconData getImage(int position) {
-    return position==0?Icons.cloud:position==1?
-        Icons.wb_sunny:Icons.lightbulb_outline;
+   getImage(int position) {
+    return position==0?Assets.cloudBtn:position==1?
+       Assets.lightBtn:Assets.tempBtn;
   }
 
   String getTitle(int position) {

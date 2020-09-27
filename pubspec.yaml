@@ -85,6 +85,36 @@ flutter:
     - images/backKey.png
     - images/backButton.jpg
     - images/favNewRed.png
+    - images/big_cart.png
+    - images/capture_btn.png
+    - images/cart.png
+    - images/chat_bot.png
+    - images/cloud_btn.png
+    - images/coin_green.png
+    - images/coin_white.png
+    - images/donate_icon.png
+    - images/gift_box.png
+    - images/growlah_icon.png
+    - images/half_circle.png
+    - images/light_btn.png
+    - images/logout_icon.png
+    - images/news_feed.png
+    - images/notification.png
+    - images/profile_icon.png
+    - images/scan_spot.png
+    - images/send.png
+    - images/settings_icon.png
+    - images/smile.png
+    - images/stack.png
+    - images/stock_green.png
+    - images/subscription.png
+    - images/temp_btn.png
+    - images/temp_icon.png
+    - images/top.png
+    - images/video.png
+    - images/cloud.png
+    - images/nav.png
+    - images/yello_circle.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

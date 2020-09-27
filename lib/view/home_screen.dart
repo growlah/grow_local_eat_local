@@ -70,14 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Expanded(child: mainView()),
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0, bottom: 20.0),
-              child: GestureDetector(
-                  onTap: (){
-                    AppConfig.showToast('test');
-                  },
-                  child: bottomIcon()),
-            )
+            GestureDetector(
+                onTap: (){
+                  // AppConfig.showToast('test');
+                },
+                child: bottomIcon())
           ],
         ),
       ),
@@ -112,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget mainView() {
     return GridView.builder(
         scrollDirection: Axis.vertical,
-        physics: ScrollPhysics(parent: ScrollPhysics()),
+        physics:NeverScrollableScrollPhysics(),
         itemCount: optionsList.length,
         shrinkWrap: true,
         gridDelegate:
@@ -123,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               itemSelected(index);
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 30.0,left: 20.0,right: 20.0),
+              padding: const EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0),
               child: Center(
                 child: Neumorphic(
                   boxShape: NeumorphicBoxShape.roundRect(
@@ -139,15 +136,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Text(
-                          optionsList[index].title,
-                          style: TextStyle(color: Colors.green),
+                        Visibility(
+                          visible: index==0,
+                          child: Text(
+                            optionsList[index].title,
+                            style: TextStyle(color: Colors.green),
+                          ),
                         ),
                         Image.asset(
                           getImage(index),
-                          height: 50.0,
-                          width: 50.0,
-                        )
+                          height: 44.0,
+                          width: 60.0,
+                        ),
+                        Visibility(
+                          visible: index!=0,
+                          child: Text(
+                            optionsList[index].title,
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -162,22 +169,22 @@ class _HomeScreenState extends State<HomeScreen> {
   String getImage(int index) {
     switch (index) {
       case 0:
-        return Assets.film;
+        return Assets.videoIcon;
         break;
       case 1:
-        return Assets.donateNew;
+        return Assets.tempIcon;
         break;
       case 2:
-        return Assets.temp;
-        break;
-      case 3:
-        return Assets.sell;
-        break;
-      case 4:
         return Assets.communicate;
         break;
+      case 3:
+        return Assets.bigCart;
+        break;
+      case 4:
+        return Assets.newsFeed;
+        break;
       case 5:
-        return Assets.refer;
+        return Assets.scanSpot;
         break;
     }
   }
@@ -214,18 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget bottomIcon() {
     return Center(
       child: Container(
-        height: 55.0,
-        width: 75.0,
-        child: Neumorphic(
-          style: NeumorphicStyle(
-              color: Colors.green, shadowDarkColor: Colors.black),
-          boxShape: NeumorphicBoxShape.roundRect(
-              BorderRadius.all(Radius.circular(5.0))),
-          child: Icon(
-            Icons.chat,
-            color: Colors.white,
-          ),
-        ),
+        child: Image.asset(Assets.chatBot),
       ),
     );
   }

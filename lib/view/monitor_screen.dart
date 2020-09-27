@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
+import 'package:grow_lah/utils/assets.dart';
 
 class MonitorScreen extends StatefulWidget {
   MonitorScreen({Key key}) : super(key: key);
@@ -99,10 +100,9 @@ class _MonitorScreenState extends State<MonitorScreen> {
         height: 205.0,
         width: 374.0,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top:20.0),
+              padding: const EdgeInsets.only(top:10.0),
               child: Container(
                 height: 30.0,
                 width: 330.0,
@@ -149,8 +149,14 @@ class _MonitorScreenState extends State<MonitorScreen> {
                 ),),
               ),
             ),
-            getCenterView(),
-            getBottomView()
+            Padding(
+              padding: const EdgeInsets.only(top:20.0),
+              child: getCenterView(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:15.0),
+              child: getBottomView(),
+            )
           ],
         ),
       ),
@@ -172,14 +178,25 @@ class _MonitorScreenState extends State<MonitorScreen> {
 
   Widget getCenterView() {
     return Container(
-      height: 65.0,
+      height: 60.0,
       child: Row(
         children: <Widget>[
         Expanded(child: Row(
           children: <Widget>[
-            Icon(Icons.wb_sunny,color: Colors.yellowAccent,size: 40.0,),
             Padding(
-              padding: const EdgeInsets.only(left:90.0),
+              padding: const EdgeInsets.only(left:8.0),
+              child: Stack(
+                children: <Widget>[
+                  Image.asset(Assets.yellowCircle),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Image.asset(Assets.cloud),
+                  ),
+                ],
+              )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:70.0),
               child: Text('35°C',style: TextStyle(
                 fontSize: 35.0,fontWeight: FontWeight.bold,color: Colors.white,
               ),),
@@ -187,17 +204,20 @@ class _MonitorScreenState extends State<MonitorScreen> {
 
           ],
         )),
-          ClipOval(
-            child: Container(
-              height: 60.0,
-              width: 50.0,
-              color: Color.fromRGBO(1,108,132,1),
-              child: Icon(Icons.arrow_forward_ios,color: Colors.white,
-                size: 15.0,),
+          Container(
+            // color: Color.fromRGBO(1,108,132,1),
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: 65.0,
+                    width: 23.0,
+                    child: Image.asset(Assets.halfCircle,fit: BoxFit.fill,)),
+                Center(child: Icon(Icons.arrow_forward_ios,color: Colors.white,))
+              ],
             ),
           )
         ],
-      ),
+      )
     );
   }
 
@@ -210,10 +230,13 @@ class _MonitorScreenState extends State<MonitorScreen> {
           Expanded(
             child: Row(
               children: <Widget>[
-                Icon(Icons.location_on,color: Colors.white,),
-                Text('Thu, 24 September 2020',style: TextStyle(
-                    color: Colors.white,fontSize: 12.0
-                ),),
+               Image.asset(Assets.nav),
+                Padding(
+                  padding: const EdgeInsets.only(left:5.0),
+                  child: Text('Thu, 24 September 2020',style: TextStyle(
+                      color: Colors.white,fontSize: 12.0
+                  ),),
+                ),
               ],
             ),
           ),

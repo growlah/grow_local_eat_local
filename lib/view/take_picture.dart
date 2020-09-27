@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/scan_spot.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -52,7 +53,16 @@ class _TakePictureState extends State<TakePicture> {
     return Scaffold(
       body: Container(child: Stack(
         children: <Widget>[
+
           CameraPreview(controller),
+          GestureDetector(
+            onTap: ()=>Navigator.pop(context),
+            child: Padding(
+              padding: const EdgeInsets.only(top:50.0,
+              left: 20.0),
+              child: Icon(Icons.arrow_back_ios,color: Colors.white,size: 20.0,),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom:50.0),
             child: Align(
@@ -66,7 +76,7 @@ class _TakePictureState extends State<TakePicture> {
                   },
                   child: Container(
                     padding: EdgeInsets.all(4.0),
-                    child:Icon(Icons.camera,color:Colors.white,size: 40.0,),
+                    child:Image.asset(Assets.capture),
                   ),
                 ),
               ),
@@ -111,42 +121,6 @@ class _TakePictureState extends State<TakePicture> {
     }
   }
 
-  Widget _cameraPreviewWidget() {
-    if (controller == null || !controller.value.isInitialized) {
-      return const Text(
-        'Loading',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-          fontWeight: FontWeight.w900,
-        ),
-      );
-    }
-
-    return AspectRatio(
-      aspectRatio: controller.value.aspectRatio,
-      child: CameraPreview(controller),
-    );
-  }
-  Widget _cameraTogglesRowWidget() {
-    if (cameras == null || cameras.isEmpty) {
-      return Spacer();
-    }
-
-    CameraDescription selectedCamera = cameras[selectedCameraIdx];
-    CameraLensDirection lensDirection = selectedCamera.lensDirection;
-
-    return Expanded(
-      child: Align(
-        alignment: Alignment.centerLeft,
-        // child: FlatButton.icon(
-        //     onPressed: _onSwitchCamera,
-        //     icon: Icon(_getCameraLensIcon(lensDirection)),
-        //     label: Text(
-        //         "${lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1)}")),
-      ),
-    );
-  }
   void _onCapturePressed(context) async {
     try {
       // 1

@@ -1,5 +1,4 @@
 class Assets{
-  static String phoneImage="images/phone_image.jpeg";
   static String communicate="images/communicate.jpg";
   static String sell="images/sell.png";
   static String video="images/video.jpg";
@@ -32,4 +31,34 @@ class Assets{
   static String back="images/backKey.png";
   static String favRed="images/favNewRed.png";
   static String backBtn="images/backButton.jpg";
+  static String videoIcon='images/video.png';
+  static String top='images/top.png';
+  static String tempIcon='images/temp_icon.png';
+  static String tempBtn='images/temp_btn.png';
+  static String subscription='images/subscription.png';
+  static String stockGreen='images/stock_green.png';
+  static String stock='images/stack.png';
+  static String smile='images/smile.png';
+  static String settingsIcon='images/settings_icon.png';
+  static String send='images/send.png';
+  static String scanSpot='images/scan_spot.png';
+  static String profileIcon='images/profile_icon.png';
+  static String notification='images/notification.png';
+  static String newsFeed='images/news_feed.png';
+  static String logOut='images/logout_icon.png';
+  static String lightBtn='images/light_btn.png';
+  static String halfCircle='images/half_circle.png';
+  static String appIcon='images/growlah_icon.png';
+  static String giftBox='images/gift_box.png';
+  static String donateIcon='images/donate_icon.png';
+  static String coin='images/coin_white.png';
+  static String coinGreen='images/coin_green.png';
+  static String cloudBtn='images/cloud_btn.png';
+  static String chatBot='images/chat_bot.png';
+  static String cart='images/cart.png';
+  static String capture='images/capture_btn.png';
+  static String bigCart='images/big_cart.png';
+  static String cloud='images/cloud.png';
+  static String yellowCircle='images/yello_circle.png';
+  static String nav='images/nav.png';
 }

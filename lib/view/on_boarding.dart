@@ -86,7 +86,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
            );
          }),
 
-          GestureDetector(
+          isSelected?GestureDetector(
             onTap: (){
               Navigator.pushReplacement(context, MaterialPageRoute(
                 builder: (context)=>HomeScreen()
@@ -107,7 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               ),
             ),),
-          )
+          ):Container()
         ],
       ),
     ),
