@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
               itemSelected(index);
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 30.0),
+              padding: const EdgeInsets.only(top: 30.0,left: 20.0,right: 20.0),
               child: Center(
                 child: Neumorphic(
                   boxShape: NeumorphicBoxShape.roundRect(
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     color: Colors.white,
                     height: getHeight(index),
-                    width: 130.0,
+                    width: 141.0,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -189,22 +189,22 @@ class _HomeScreenState extends State<HomeScreen> {
   getHeight(int index) {
     switch (index) {
       case 0:
-        return 160.0;
+        return 157.0;
         break;
       case 1:
-        return 100.0;
+        return 124.0;
         break;
       case 2:
-        return 130.0;
+        return 124.0;
         break;
       case 3:
-        return 160.0;
+        return 177.0;
         break;
       case 4:
-        return 110.0;
+        return 135.0;
         break;
       case 5:
-        return 130.0;
+        return 122.0;
         break;
     }
   }
@@ -212,8 +212,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget bottomIcon() {
     return Center(
       child: Container(
-        height: 40.0,
-        width: 60.0,
+        height: 55.0,
+        width: 75.0,
         child: Neumorphic(
           style: NeumorphicStyle(
               color: Colors.green, shadowDarkColor: Colors.black),

@@ -52,87 +52,90 @@ class _VideosScreenState extends State<VideosScreen> {
         ],
       ),
       body: SafeArea(
-          child:Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Neumorphic(
-                  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
-                  style: NeumorphicStyle(depth: -8,
-                      shadowDarkColor: Colors.black54,
-                      lightSource: LightSource.topLeft,
-                      color: Colors.white,
-                      intensity: 0.86,
-                      surfaceIntensity: 0.5),
-                  child: Container(
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child: TextField(
-                        controller:searchController ,
-                        textAlign: TextAlign.start,
-                        maxLength: 10,
-                        buildCounter: (BuildContext context,
-                            {int currentLength,
-                              int maxLength,
-                              bool isFocused}) =>
-                        null,
-                        decoration: InputDecoration(
-                          suffixIcon: Icon(Icons.search,color: Colors.grey,),
-                          filled: true,
-                            fillColor: Colors.white,
-                            hintText:'Search here....',
-                            hintStyle: TextStyle(color: Colors.grey),
-                            contentPadding: EdgeInsets.only(top:20.0,left: 10.0
-                            ,right: 10.0),
-                            border: InputBorder.none
+          child:Container(
+            color: Colors.white12,
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Neumorphic(
+                    boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
+                    style: NeumorphicStyle(depth: -8,
+                        shadowDarkColor: Colors.black54,
+                        lightSource: LightSource.topLeft,
+                        color: Colors.white,
+                        intensity: 0.86,
+                        surfaceIntensity: 0.5),
+                    child: Container(
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: TextField(
+                          controller:searchController ,
+                          textAlign: TextAlign.start,
+                          maxLength: 10,
+                          buildCounter: (BuildContext context,
+                              {int currentLength,
+                                int maxLength,
+                                bool isFocused}) =>
+                          null,
+                          decoration: InputDecoration(
+                            suffixIcon: Icon(Icons.search,color: Colors.grey,),
+                            filled: true,
+                              fillColor: Colors.white,
+                              hintText:'Search here....',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              contentPadding: EdgeInsets.only(top:20.0,left: 10.0
+                              ,right: 10.0),
+                              border: InputBorder.none
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                itemCount: videosList.length,
-                shrinkWrap: true,
-                physics: ScrollPhysics(parent: ScrollPhysics()),
-                scrollDirection: Axis.vertical,
-                itemBuilder: (context,index){
-                  return Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Neumorphic(
-                      boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
-                      style: NeumorphicStyle(
-                          shadowDarkColor: Colors.black54,
-                          lightSource: LightSource.topLeft),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            height:250.0,
-                            child: Chewie(
-                              controller: getChewieController(index),
+                Expanded(
+                  child: ListView.builder(
+                  itemCount: videosList.length,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(parent: ScrollPhysics()),
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context,index){
+                    return Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Neumorphic(
+                        boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
+                        style: NeumorphicStyle(
+                            shadowDarkColor: Colors.black54,
+                            lightSource: LightSource.topLeft),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              height:250.0,
+                              child: Chewie(
+                                controller: getChewieController(index),
+                              ),
                             ),
-                          ),
-                          Container(
-                            color: Colors.white,
-                            height: 40.0,
-                            child: Center(
-                              child: Text('Cultivation',style: TextStyle(
-                                color: Colors.green
-                              ),),
-                            ),
-                          )
-                        ],
+                            Container(
+                              color: Colors.white,
+                              height: 40.0,
+                              child: Center(
+                                child: Text('Cultivation',style: TextStyle(
+                                  color: Colors.green
+                                ),),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                }),
-              ),
-            ],
+                    );
+                  }),
+                ),
+              ],
+            ),
           ) ),
     );
   }
