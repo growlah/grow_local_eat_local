@@ -14,6 +14,8 @@ import 'package:grow_lah/view/monitor_screen.dart';
 import 'package:grow_lah/view/take_picture.dart';
 import 'package:grow_lah/view/video_screen.dart';
 
+import 'commuication_detail.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
 
@@ -42,43 +44,50 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.green,
-        title: Text(
-          AppConfig.growLah,
-          style: TextStyle(color: Colors.white, fontSize: 16),
-        ),
-        elevation: 0.0,
-      ),
-      drawer: getDrawer(),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 10.0),
-              child: Text(
-                'Welcome !',
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
-              ),
+    return Stack(
+      children: <Widget>[
+    AppConfig.bgWave(context),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.transparent,
+            title: Text(
+              AppConfig.growLah,
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
-            Expanded(child: mainView()),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                  onTap: (){
-                    // AppConfig.showToast('test');
-                  },
-                  child: bottomIcon()),
-            )
-          ],
-        ),
-      ),
+            elevation: 0.0,
+          ),
+          drawer: getDrawer(),
+          body: Container(
+            color: Colors.transparent,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, left: 10.0),
+                  child: Text(
+                    'Welcome !',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green),
+                  ),
+                ),
+                Expanded(child: mainView()),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                      onTap: (){
+                        // AppConfig.showToast('test');
+                      },
+                      child: bottomIcon()),
+                )
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 
@@ -251,7 +260,8 @@ class _HomeScreenState extends State<HomeScreen> {
       CommunicationSection()));break;
       case 3: Navigator.push(context, MaterialPageRoute(builder: (context)=>
           BuyAndSell()));break;
-      case 4:  null; break;
+      case 4:  Navigator.push(context, MaterialPageRoute(builder: (context)
+      =>DetailCommunication())); break;
       case 5: Navigator.push(context, MaterialPageRoute(builder: (context)=>
       TakePicture()));break;
     }

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/authentication.dart';
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -30,12 +31,33 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.green,
-      body:Center(child:
-      Text(
-        'Welcome to GrowLah',
-        style: new TextStyle(
-            fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
-      ),),
+      body:Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height*0.4),
+            child: Center(child: Image.asset(Assets.appLogo)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Text(
+              'GrowLah',
+              style: new TextStyle(
+                  fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: Text('GrowLocal EatLocal',
+              style: new TextStyle(
+                  fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),),
+          ),
+          Text('Powered by ',
+            style: new TextStyle(
+                fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),),
+          Image.asset(Assets.bottomLogo),
+        ],
+      ),
     );
   }
 }

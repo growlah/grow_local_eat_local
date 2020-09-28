@@ -74,5 +74,12 @@ class AppConfig{
       ],
     );
  }
-
+ static bgWave(BuildContext context){
+   return  Image.asset(
+     Assets.bg,
+     height: MediaQuery.of(context).size.height,
+     width: MediaQuery.of(context).size.width,
+     fit: BoxFit.cover,
+   );
+ }
 }

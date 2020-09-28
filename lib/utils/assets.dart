@@ -68,4 +68,7 @@ class Assets{
   static String bg='images/bg.jpeg';
   static String focus='images/focus.jpeg';
   static String chat='images/chat.png';
+  static String appLogo='images/app_logo.png';
+  static String bottomLogo='images/bottom_logo.png';
+  static String scanIcon='images/scan_icon.png';
 }

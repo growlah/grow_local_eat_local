@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/view/buy_sell_detail.dart';
 
 class BuyAndSell extends StatefulWidget {
   BuyAndSell({Key key}) : super(key: key);
@@ -73,43 +74,48 @@ class _BuyAndSellState extends State<BuyAndSell> {
                 itemCount: 10,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                 itemBuilder: (context,position){
-                return Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left:20.0,right: 20.0,top: 5.0,bottom: 5.0),
-                    child: Neumorphic(
-                      style: AppConfig.neuStyle,
-                      boxShape: AppConfig.neuShape,
-                      child: Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Expanded(
-                              child: Container(
-                                height: 152.0,
-                                width: 162.0,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left:5.0,right: 5.0),
-                                  child: Neumorphic(
-                                      boxShape: AppConfig.neuShape,
-                                      child: Image.asset(Assets.sample2,fit: BoxFit.cover,)),
+                return GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BuyAndSellDetail()));
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:20.0,right: 20.0,top: 5.0,bottom: 5.0),
+                      child: Neumorphic(
+                        style: AppConfig.neuStyle,
+                        boxShape: AppConfig.neuShape,
+                        child: Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Expanded(
+                                child: Container(
+                                  height: 152.0,
+                                  width: 162.0,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left:5.0,right: 5.0),
+                                    child: Neumorphic(
+                                        boxShape: AppConfig.neuShape,
+                                        child: Image.asset(Assets.sample2,fit: BoxFit.cover,)),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:8.0,top: 5.0),
-                              child: Text('Fertilizer',style: TextStyle(
-                                color: Colors.green,fontWeight: FontWeight.bold,
-                                fontSize: 14.0
-                              ),),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left:8.0,top:5.0),
-                              child: Text("\$100",style: TextStyle(
+                              Padding(
+                                padding: const EdgeInsets.only(left:8.0,top: 5.0),
+                                child: Text('Fertilizer',style: TextStyle(
                                   color: Colors.green,fontWeight: FontWeight.bold,
                                   fontSize: 14.0
-                              ),),
-                            )
-                          ],
+                                ),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:8.0,top:5.0),
+                                child: Text("\$100",style: TextStyle(
+                                    color: Colors.green,fontWeight: FontWeight.bold,
+                                    fontSize: 14.0
+                                ),),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),

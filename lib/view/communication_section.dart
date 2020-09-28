@@ -48,7 +48,9 @@ class _CommunicationSectionState extends State<CommunicationSection> {
                       Navigator.push(context, MaterialPageRoute(builder: (context)
                       =>DetailCommunication()));
                     },
-                    child: ClipOval(
+                    child: Neumorphic(
+                      style: AppConfig.neuStyle,
+                      boxShape: AppConfig.neuShape,
                       child: Container(
                         height: 150.0,width: 150.0,
                         child:Image.asset(Assets.sample1,fit: BoxFit.fill,) ,

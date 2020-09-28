@@ -122,6 +122,9 @@ flutter:
     - images/focus.jpeg
     - images/bg.jpeg
     - images/chat.png
+    - images/app_logo.png
+    - images/bottom_logo.png
+    - images/scan_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

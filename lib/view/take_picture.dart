@@ -63,7 +63,7 @@ class _TakePictureState extends State<TakePicture> {
               child: Icon(Icons.arrow_back_ios,color: Colors.white,size: 20.0,),
             ),
           ),
-          Image.asset(Assets.focus),
+          Center(child: Image.asset(Assets.scanIcon,)),
           Padding(
             padding: const EdgeInsets.only(bottom:50.0),
             child: Align(
