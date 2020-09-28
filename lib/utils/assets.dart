@@ -62,4 +62,6 @@ class Assets{
   static String yellowCircle='images/yello_circle.png';
   static String nav='images/nav.png';
   static String shareIcon='images/share.png';
+  static String checkedIcon='images/checked_icon.png';
+  static String manIcon='images/profile.jpeg';
 }

@@ -116,6 +116,8 @@ flutter:
     - images/nav.png
     - images/yello_circle.png
     - images/share.png
+    - images/profile.jpeg
+    - images/checked_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

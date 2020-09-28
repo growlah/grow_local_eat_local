@@ -10,6 +10,7 @@ import 'package:grow_lah/model/app_drawer_model.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/ar_view.dart';
+import 'package:grow_lah/view/profile_screen.dart';
 import 'package:grow_lah/view/refer_earn.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -56,10 +57,10 @@ class _AppDrawerState extends State<AppDrawer> {
                  padding: const EdgeInsets.only(left:20.0,top: 20.0),
                  child: InkWell(
                    onTap: (){
-                     var route=MaterialPageRoute(builder: (context)=>ARScreen());
                      var route5=MaterialPageRoute(builder: (context)=>ReferAndEarn());
-                     if(index==3){
-                       Navigator.push(context, route);
+                     var route0=MaterialPageRoute(builder: (context)=>MyProfile());
+                     if(index==0){
+                       Navigator.push(context, route0);
                      }
                      if(index==5){
                        Navigator.pop(context);

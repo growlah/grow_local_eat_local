@@ -234,9 +234,8 @@ class _HomeScreenState extends State<HomeScreen> {
       MonitorScreen()));;break;
       case 2:  Navigator.push(context, MaterialPageRoute(builder: (context)=>
       CommunicationSection()));break;
-      case 3:break;
-      case 4:   Navigator.push(context, MaterialPageRoute(builder: (context)=>
-      DetailCommunication())); break;
+      case 3:null;break;
+      case 4:  null; break;
       case 5: Navigator.push(context, MaterialPageRoute(builder: (context)=>
       TakePicture()));break;
     }
