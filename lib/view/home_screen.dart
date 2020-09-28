@@ -9,6 +9,7 @@ import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/app_drawer.dart';
 import 'package:grow_lah/view/buy_sell.dart';
+import 'package:grow_lah/view/chat_bot.dart';
 import 'package:grow_lah/view/communication_section.dart';
 import 'package:grow_lah/view/monitor_screen.dart';
 import 'package:grow_lah/view/take_picture.dart';
@@ -79,7 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
                       onTap: (){
-                        // AppConfig.showToast('test');
+                        Navigator.push(context, MaterialPageRoute(builder: (context)
+                        =>  ChatBot()));
                       },
                       child: bottomIcon()),
                 )
@@ -241,13 +243,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-    // return Center(
-    //   child: FloatingActionButton(onPressed: (){},
-    //   child: Container(
-    //     color: Colors.green,
-    //     child: Image.asset(Assets.chat),
-    //   ),),
-    // );
   }
 
   void itemSelected(int index) {
