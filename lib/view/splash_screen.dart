@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/authentication.dart';
 class SplashScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     super.initState();
     Future.delayed(const Duration(seconds: 4), () async {
       Navigator.pushReplacement(context,MaterialPageRoute(builder:(context)=>AuthenticationScreen()));

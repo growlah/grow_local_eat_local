@@ -47,9 +47,9 @@ class _BuyAndSellState extends State<BuyAndSell> {
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left:10.0,right: 10.0),
-            child: Image.asset(Assets.cart,color: Colors.green,height: 15.0,
-              width: 15.0,),
+            padding: const EdgeInsets.only(left:20.0,right: 20.0),
+            child: Image.asset(Assets.cart,color: Colors.green,height: 20.0,
+              width: 20.0,),
           ),
         ],
       ),
