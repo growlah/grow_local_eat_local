@@ -64,4 +64,8 @@ class Assets{
   static String shareIcon='images/share.png';
   static String checkedIcon='images/checked_icon.png';
   static String manIcon='images/profile.jpeg';
+  static String filter='images/filter.png';
+  static String bg='images/bg.jpeg';
+  static String focus='images/focus.jpeg';
+  static String chat='images/chat.png';
 }

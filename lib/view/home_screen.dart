@@ -8,11 +8,9 @@ import 'package:grow_lah/model/options_list.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/app_drawer.dart';
-import 'package:grow_lah/view/commuication_detail.dart';
+import 'package:grow_lah/view/buy_sell.dart';
 import 'package:grow_lah/view/communication_section.dart';
-import 'package:grow_lah/view/feeds_detail_page.dart';
 import 'package:grow_lah/view/monitor_screen.dart';
-import 'package:grow_lah/view/scan_spot.dart';
 import 'package:grow_lah/view/take_picture.dart';
 import 'package:grow_lah/view/video_screen.dart';
 
@@ -70,11 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Expanded(child: mainView()),
-            GestureDetector(
-                onTap: (){
-                  // AppConfig.showToast('test');
-                },
-                child: bottomIcon())
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                  onTap: (){
+                    // AppConfig.showToast('test');
+                  },
+                  child: bottomIcon()),
+            )
           ],
         ),
       ),
@@ -220,10 +221,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget bottomIcon() {
     return Center(
-      child: Container(
-        child: Image.asset(Assets.chatBot),
+      child: Neumorphic(
+        style: AppConfig.neuStyle,
+        boxShape: AppConfig.neuShape,
+        child: Container(
+          width: 75.0,
+          height: 55.0,
+          color: Colors.green,
+          child: Image.asset(Assets.chat),
+        ),
       ),
     );
+    // return Center(
+    //   child: FloatingActionButton(onPressed: (){},
+    //   child: Container(
+    //     color: Colors.green,
+    //     child: Image.asset(Assets.chat),
+    //   ),),
+    // );
   }
 
   void itemSelected(int index) {
@@ -234,7 +249,8 @@ class _HomeScreenState extends State<HomeScreen> {
       MonitorScreen()));;break;
       case 2:  Navigator.push(context, MaterialPageRoute(builder: (context)=>
       CommunicationSection()));break;
-      case 3:null;break;
+      case 3: Navigator.push(context, MaterialPageRoute(builder: (context)=>
+          BuyAndSell()));break;
       case 4:  null; break;
       case 5: Navigator.push(context, MaterialPageRoute(builder: (context)=>
       TakePicture()));break;

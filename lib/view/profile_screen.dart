@@ -73,7 +73,7 @@ class _MyProfileState extends State<MyProfile> {
                 Text('Name',style: TextStyle(color: Colors.green,
                 fontSize: 16.0,fontWeight: FontWeight.bold
                 ),),
-                Icon(Icons.edit,color: Colors.green,)
+                Icon(Icons.edit,color: Colors.green,size: 18.0,)
               ],
             ),
             Padding(
@@ -106,18 +106,24 @@ class _MyProfileState extends State<MyProfile> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            onTap: ()=>seeImage(),
-            title:  Center(child: Text('View')),
+            onTap: (){
+              Navigator.pop(context);
+              seeImage();},
+            title:  Center(child: Text('View',style: TextStyle(fontWeight: FontWeight.bold),)),
           ),
           AppConfig.divider(),
           ListTile(
-            onTap: ()=>openCamera(),
-            title:  Center(child: Text('Camera')),
+            onTap: (){
+              Navigator.pop(context);
+              openCamera();},
+            title:  Center(child: Text('Camera',style: TextStyle(fontWeight: FontWeight.bold))),
           ),
           AppConfig.divider(),
           ListTile(
-            onTap: ()=>openGallery(),
-            title:  Center(child: Text('Gallery')),
+            onTap: (){
+              Navigator.pop(context);
+              openGallery();},
+            title:  Center(child: Text('Gallery',style: TextStyle(fontWeight: FontWeight.bold))),
           ),
 
 
@@ -143,7 +149,16 @@ class _MyProfileState extends State<MyProfile> {
   }
 
   seeImage() {
-    
+    showDialog(context:context,builder: (BuildContext context){
+      return Dialog(
+        child: Container(
+          height: 300.0,
+          width: 200.0,
+          child: imageFile!=null?
+          Image.file(imageFile,fit: BoxFit.cover,):Image.asset(Assets.manIcon),
+        ),
+      );
+    });
   }
 
   Widget getList() {
