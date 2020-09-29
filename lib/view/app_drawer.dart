@@ -12,6 +12,7 @@ import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/ar_view.dart';
 import 'package:grow_lah/view/profile_screen.dart';
 import 'package:grow_lah/view/refer_earn.dart';
+import 'package:grow_lah/view/settings.dart';
 
 class AppDrawer extends StatefulWidget {
   AppDrawer({Key key}) : super(key: key);
@@ -59,12 +60,12 @@ class _AppDrawerState extends State<AppDrawer> {
                    onTap: (){
                      var route5=MaterialPageRoute(builder: (context)=>ReferAndEarn());
                      var route0=MaterialPageRoute(builder: (context)=>MyProfile());
-                     if(index==0){
-                       Navigator.push(context, route0);
-                     }
-                     if(index==5){
-                       Navigator.pop(context);
-                       Navigator.push(context, route5);
+                     var route2=MaterialPageRoute(builder: (context)=>Settings());
+
+                     switch(index){
+                       case 0:moveToNext(route0);break;
+                       case 2:moveToNext(route2);break;
+                       case 5:moveToNext(route5);break;
                      }
                    },
                    child: Column(
@@ -109,5 +110,11 @@ class _AppDrawerState extends State<AppDrawer> {
       print(e.toString());
     }
     return result;
+  }
+
+  void moveToNext(MaterialPageRoute route) {
+    Navigator.pop(context);
+    Navigator.push(context, route);
+
   }
 }
