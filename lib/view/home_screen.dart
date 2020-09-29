@@ -77,18 +77,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Expanded(child: mainView()),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)
-                        =>  ChatBot()));
-                      },
-                      child: bottomIcon()),
-                )
+
               ],
             ),
           ),
+        ),
+        Positioned(
+          bottom: 20.0,
+          left: MediaQuery.of(context).size.width/2.5,
+          child: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                =>  ChatBot()));
+              },
+              child: bottomIcon()),
         )
       ],
     );
@@ -232,16 +234,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget bottomIcon() {
-    return Center(
-      child: Neumorphic(
-        style: NeumorphicStyle(color: Colors.transparent),
-        boxShape: AppConfig.neuShape,
-        child: Container(
-          width: 75.0,
-          height: 55.0,
-          color: Colors.green,
-          child: Image.asset(Assets.chat),
-        ),
+    return Neumorphic(
+      style: NeumorphicStyle(color: Colors.transparent),
+      boxShape: AppConfig.neuShape,
+      child: Container(
+        width: 75.0,
+        height: 55.0,
+        color: Colors.green,
+        child: Image.asset(Assets.chat),
       ),
     );
   }
