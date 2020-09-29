@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget bottomIcon() {
     return Center(
       child: Neumorphic(
-        style: AppConfig.neuStyle,
+        style: NeumorphicStyle(color: Colors.transparent),
         boxShape: AppConfig.neuShape,
         child: Container(
           width: 75.0,

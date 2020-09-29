@@ -27,7 +27,7 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('BUY/SELL', context,true),
+      appBar: AppConfig.appBar('BUY&SELL', context,true),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

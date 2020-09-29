@@ -72,4 +72,10 @@ class Assets{
   static String bottomLogo='images/bottom_logo.png';
   static String scanIcon='images/scan_icon.png';
   static String gPayIcon='images/gPay.png';
+  static String comm1='images/comm1.jpeg';
+  static String comm2='images/comm2.jpeg';
+  static String comm3='images/comm3.png';
+  static String comm6='images/comm6.png';
+  static String comm4='images/comm4.jpeg';
+  static String comm5='images/comm5.jpeg';
 }

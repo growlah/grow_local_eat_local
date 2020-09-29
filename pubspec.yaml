@@ -126,6 +126,12 @@ flutter:
     - images/bottom_logo.png
     - images/scan_icon.png
     - images/gPay.png
+    - images/comm1.jpeg
+    - images/comm2.jpeg
+    - images/comm3.png
+    - images/comm4.jpeg
+    - images/comm5.jpeg
+    - images/comm6.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -41,7 +41,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
           child: Icon(Icons.arrow_back_ios,color: Colors.green,size: 24,),
         ),
         title: Text(
-          'BUY/SELL',
+          'BUY&SELL',
           style: TextStyle( fontFamily:AppConfig.roboto,
               fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green),
         ),

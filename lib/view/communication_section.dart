@@ -53,16 +53,28 @@ class _CommunicationSectionState extends State<CommunicationSection> {
                       boxShape: AppConfig.neuShape,
                       child: Container(
                         height: 150.0,width: 150.0,
-                        child:Image.asset(Assets.sample1,fit: BoxFit.fill,) ,
+                        child:Image.asset(getImage(index,false),fit: BoxFit.fill,) ,
                       ),
                     ),
                   ),
-                  Text("Sample",style: TextStyle( fontFamily:AppConfig.roboto,),)
+                  Text(getImage(index,true),style: TextStyle( fontFamily:AppConfig.roboto,
+                      color: Colors.green,),)
                 ],
               );
               }),
         ),
       ),
     );
+  }
+
+   getImage(int index, bool forText) {
+    switch(index){
+      case 0:return forText?'Farmers':Assets.comm1;break;
+      case 1:return forText?'House workers':Assets.comm2;break;
+      case 2:return forText?'Labours':Assets.comm3;break;
+      case 3:return forText?'Workers':Assets.comm4;break;
+      case 4:return forText?'Sellers':Assets.comm5;break;
+      case 5:return forText?'Buyers':Assets.comm6;break;
+    }
   }
 }
