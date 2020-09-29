@@ -89,4 +89,11 @@ class AppConfig{
      fit: BoxFit.cover,
    );
  }
+ static buildCounter(){
+   return   (BuildContext context,
+   {int currentLength,
+   int maxLength,
+   bool isFocused}) =>
+   null;
+ }
 }
