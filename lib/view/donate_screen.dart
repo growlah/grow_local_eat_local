@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
+import 'package:grow_lah/utils/assets.dart';
 
 class DonateScreen extends StatefulWidget {
   DonateScreen({Key key}) : super(key: key);
@@ -13,6 +14,10 @@ class DonateScreen extends StatefulWidget {
 
 class _DonateScreenState extends State<DonateScreen> {
   TextEditingController textEditingController=TextEditingController();
+  bool upiPayment=false;
+  bool creditCard=false;
+  bool gPay=false;
+  bool upiId=false;
   @override
   void initState() {
     super.initState();
@@ -27,6 +32,7 @@ class _DonateScreenState extends State<DonateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
+      backgroundColor: Colors.white,
       appBar: AppConfig.appBar('DONATE', context, true),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -44,6 +50,7 @@ class _DonateScreenState extends State<DonateScreen> {
                 boxShape: AppConfig.neuShape,
                 child: Container(
                   height: 158.0,
+                  color: Colors.white,
                   width: 365.0,
                   child: Center(
                     child: Column(
@@ -109,59 +116,54 @@ class _DonateScreenState extends State<DonateScreen> {
                 color: Colors.green,
               ),),
             ),
-            Container(
-              height: 50.0,
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.radio_button_checked,color: Colors.green,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: Text('UPI PAYMENT',style: TextStyle(color: Colors.green,
-                    fontSize: 14.0,fontWeight: FontWeight.bold),),
-                  )
-                ],
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  upiPayment=!upiPayment;
+                  creditCard=false;
+                });
+              },
+              child: Container(
+                height: 50.0,
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      !upiPayment?Icons.radio_button_unchecked:
+                      Icons.radio_button_checked,color: Colors.green,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:10.0),
+                      child: Text('UPI PAYMENT',style: TextStyle(color: Colors.green,
+                      fontSize: 14.0,fontWeight: FontWeight.bold),),
+                    )
+                  ],
+                ),
               ),
             ),
-            Container(
-              height: 50.0,
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.radio_button_unchecked,color: Colors.green,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: Text('Credit/Debit/ATM Card',style: TextStyle(color: Colors.green,
-                        fontSize: 14.0,fontWeight: FontWeight.bold),),
-                  )
-                ],
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  creditCard=!creditCard;
+                  upiPayment=false;
+                });
+              },
+              child: Container(
+                height: 50.0,
+                child: Row(
+                  children: <Widget>[
+                    Icon(creditCard?Icons.radio_button_checked:
+                      Icons.radio_button_unchecked,color: Colors.green,),
+                    Padding(
+                      padding: const EdgeInsets.only(left:10.0),
+                      child: Text('Credit/Debit/ATM Card',style: TextStyle(color: Colors.green,
+                          fontSize: 14.0,fontWeight: FontWeight.bold),),
+                    )
+                  ],
+                ),
               ),
             ),
             AppConfig.divider(),
-            Container(
-              height: 50.0,
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.radio_button_checked,color: Colors.green,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: Text('Google Pay',style: TextStyle(color: Colors.green,
-                        fontSize: 14.0,fontWeight: FontWeight.bold),),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: 50.0,
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.radio_button_unchecked,color: Colors.green,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:10.0),
-                    child: Text('UPI ID',style: TextStyle(color: Colors.green,
-                        fontSize: 14.0,fontWeight: FontWeight.bold),),
-                  )
-                ],
-              ),
-            ),
+           upiPayment?loadUpiWidget():
+               creditCard?loadCardWidget():Container(),
             Expanded(child: Container()),
             donateBtn()
           ],
@@ -192,6 +194,66 @@ class _DonateScreenState extends State<DonateScreen> {
         ),
       ),
     );
+  }
+
+  Widget loadUpiWidget() {
+    return Column(
+       children: <Widget>[
+         GestureDetector(
+           onTap: (){
+             setState(() {
+               gPay=!gPay;
+               upiId=false;
+             });
+           },
+           child: Container(
+             height: 50.0,
+             child: Row(
+               children: <Widget>[
+                 Icon(
+                   !gPay?Icons.radio_button_unchecked:
+                   Icons.radio_button_checked,color: Colors.green,),
+                 Expanded(
+                   child: Padding(
+                     padding: const EdgeInsets.only(left:10.0),
+                     child: Text('Google Pay',style: TextStyle(color: Colors.green,
+                         fontSize: 14.0,fontWeight: FontWeight.bold),),
+                   ),
+                 ),
+                Image.asset(Assets.gPayIcon)
+               ],
+             ),
+           ),
+         ),
+         GestureDetector(
+           onTap: (){
+             setState(() {
+               upiId=!upiId;
+               gPay=false;
+             });
+           },
+           child: Container(
+             height: 50.0,
+             child: Row(
+               children: <Widget>[
+                 Icon(
+                   upiId?Icons.radio_button_checked:
+                   Icons.radio_button_unchecked,color: Colors.green,),
+                 Padding(
+                   padding: const EdgeInsets.only(left:10.0),
+                   child: Text('UPI Id',style: TextStyle(color: Colors.green,
+                       fontSize: 14.0,fontWeight: FontWeight.bold),),
+                 )
+               ],
+             ),
+           ),
+         ),
+       ],
+    );
+  }
+
+  loadCardWidget() {
+    return Container();
   }
 
 

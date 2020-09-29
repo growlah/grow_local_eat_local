@@ -125,6 +125,7 @@ flutter:
     - images/app_logo.png
     - images/bottom_logo.png
     - images/scan_icon.png
+    - images/gPay.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

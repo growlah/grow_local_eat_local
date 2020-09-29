@@ -71,4 +71,5 @@ class Assets{
   static String appLogo='images/app_logo.png';
   static String bottomLogo='images/bottom_logo.png';
   static String scanIcon='images/scan_icon.png';
+  static String gPayIcon='images/gPay.png';
 }
