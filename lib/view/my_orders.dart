@@ -26,7 +26,6 @@ class _MyOrdersState extends State<MyOrders> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppConfig.appBar('MY ORDERS', context, true),
       body: Padding(
