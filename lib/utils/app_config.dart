@@ -57,7 +57,7 @@ class AppConfig{
       ),
       title: Text(
         title,
-        style: TextStyle(
+        style: TextStyle( fontFamily:AppConfig.roboto,
             fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green),
       ),
       actions: <Widget>[

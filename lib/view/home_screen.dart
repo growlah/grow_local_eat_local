@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           visible: index==0,
                           child: Text(
                             optionsList[index].title,
-                            style: TextStyle(color: Colors.green),
+                            style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
                           ),
                         ),
                         Image.asset(
