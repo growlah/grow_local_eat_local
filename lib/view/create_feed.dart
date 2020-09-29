@@ -28,7 +28,7 @@ class _CreateFeedState extends State<CreateFeed> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar("Create Feed", context),
+      appBar: AppConfig.appBar("Create Feed", context,true),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(

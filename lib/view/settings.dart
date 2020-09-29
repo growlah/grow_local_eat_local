@@ -32,7 +32,7 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('SETTINGS', context),
+      appBar: AppConfig.appBar('SETTINGS', context,true),
       body: Padding(
         padding: const EdgeInsets.only(top:20.0),
         child: ListView.builder(

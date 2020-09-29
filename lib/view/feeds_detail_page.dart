@@ -29,7 +29,7 @@ class _FeedsDetailState extends State<FeedsDetail> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar("Feeds Detail", context),
+      appBar: AppConfig.appBar("Feeds Detail", context,true),
       body: Column(
         children: <Widget>[
           Padding(padding: const  EdgeInsets.only(left: 10.0),

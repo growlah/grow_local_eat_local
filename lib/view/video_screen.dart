@@ -35,7 +35,7 @@ class _VideosScreenState extends State<VideosScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('VIDEO GUIDE', context),
+      appBar: AppConfig.appBar('VIDEO GUIDE', context,true),
       body: SafeArea(
           child:Container(
             color: Colors.white12,

@@ -30,7 +30,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('REFER AND EARN', context),
+      appBar: AppConfig.appBar('REFER AND EARN', context,true),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

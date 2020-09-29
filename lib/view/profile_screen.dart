@@ -41,7 +41,7 @@ class _MyProfileState extends State<MyProfile> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('MY PROFILE', context),
+      appBar: AppConfig.appBar('MY PROFILE', context,true),
       body:SingleChildScrollView(
         scrollDirection: Axis.vertical,
         physics: ScrollPhysics(parent: ScrollPhysics()),

@@ -29,7 +29,7 @@ class _CommunicationSectionState extends State<CommunicationSection> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar:AppConfig.appBar('Communication',context),
+      appBar:AppConfig.appBar('Communication',context,true),
       body: Padding(
         padding: const EdgeInsets.only(top:20.0),
         child: Container(

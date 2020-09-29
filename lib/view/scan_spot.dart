@@ -32,7 +32,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('SCAN & SPOT', context),
+      appBar: AppConfig.appBar('SCAN & SPOT', context,true),
       body:Container(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

@@ -34,7 +34,7 @@ class _ChatBotState extends State<ChatBot> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppConfig.appBar('CHAT BOT', context),
+        appBar: AppConfig.appBar('CHAT BOT', context,true),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(

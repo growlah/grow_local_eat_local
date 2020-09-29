@@ -30,7 +30,7 @@ class _MonitorScreenState extends State<MonitorScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('Monitor', context,),
+      appBar: AppConfig.appBar('Monitor', context,true),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

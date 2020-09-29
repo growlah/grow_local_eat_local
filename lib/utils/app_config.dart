@@ -4,6 +4,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/utils/bazier_clip.dart';
+import 'package:grow_lah/view/notification.dart';
 
 class AppConfig{
   static String growLah='GrowLah';
@@ -43,7 +44,7 @@ class AppConfig{
  }
  static NeumorphicStyle neuStyle=NeumorphicStyle(color: Colors.grey[100]);
   static NeumorphicBoxShape neuShape= NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0)));
- static appBar(String title,BuildContext context){
+ static appBar(String title,BuildContext context,bool showNotification){
     return AppBar(
       elevation: 0.0,
       backgroundColor: Colors.white,
@@ -65,12 +66,18 @@ class AppConfig{
           child: Image.asset(Assets.stock,color: Colors.green,height: 15.0,
           width: 15.0,),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left:10.0,right: 20.0),
-          child: Image.asset(Assets.notification,color: Colors.green,
-            height: 18.0,
-            width: 18.0,),
-        )
+        showNotification?InkWell(
+          onTap: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context)=>
+            NotificationScreen()));
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left:10.0,right: 20.0),
+            child: Image.asset(Assets.notification,color: Colors.green,
+              height: 18.0,
+              width: 18.0,),
+          ),
+        ):Container()
       ],
     );
  }

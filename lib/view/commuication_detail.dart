@@ -37,7 +37,7 @@ class _DetailCommunicationState extends State<DetailCommunication> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('News Feed',context),
+      appBar: AppConfig.appBar('News Feed',context,true),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         physics: ScrollPhysics(parent: ScrollPhysics()),
