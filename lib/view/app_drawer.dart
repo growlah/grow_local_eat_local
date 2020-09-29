@@ -10,6 +10,7 @@ import 'package:grow_lah/model/app_drawer_model.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/ar_view.dart';
+import 'package:grow_lah/view/my_subs.dart';
 import 'package:grow_lah/view/profile_screen.dart';
 import 'package:grow_lah/view/refer_earn.dart';
 import 'package:grow_lah/view/settings.dart';
@@ -61,10 +62,12 @@ class _AppDrawerState extends State<AppDrawer> {
                      var route5=MaterialPageRoute(builder: (context)=>ReferAndEarn());
                      var route0=MaterialPageRoute(builder: (context)=>MyProfile());
                      var route2=MaterialPageRoute(builder: (context)=>Settings());
+                     var route4=MaterialPageRoute(builder: (context)=>MySubscriptions());
 
                      switch(index){
                        case 0:moveToNext(route0);break;
                        case 2:moveToNext(route2);break;
+                       case 4:moveToNext(route4);break;
                        case 5:moveToNext(route5);break;
                      }
                    },
