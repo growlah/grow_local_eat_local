@@ -11,6 +11,7 @@ import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/ar_view.dart';
 import 'package:grow_lah/view/donate_screen.dart';
+import 'package:grow_lah/view/my_orders.dart';
 import 'package:grow_lah/view/my_subs.dart';
 import 'package:grow_lah/view/profile_screen.dart';
 import 'package:grow_lah/view/refer_earn.dart';
@@ -63,6 +64,7 @@ class _AppDrawerState extends State<AppDrawer> {
                      var route0=MaterialPageRoute(builder: (context)=>MyProfile());
                      var route1=MaterialPageRoute(builder: (context)=>DonateScreen());
                      var route2=MaterialPageRoute(builder: (context)=>Settings());
+                     var route3=MaterialPageRoute(builder: (context)=>MyOrders());
                      var route4=MaterialPageRoute(builder: (context)=>MySubscriptions());
                      var route5=MaterialPageRoute(builder: (context)=>ReferAndEarn());
 
@@ -70,6 +72,7 @@ class _AppDrawerState extends State<AppDrawer> {
                        case 0:moveToNext(route0);break;
                        case 1:moveToNext(route1);break;
                        case 2:moveToNext(route2);break;
+                       case 3:moveToNext(route3);break;
                        case 4:moveToNext(route4);break;
                        case 5:moveToNext(route5);break;
                      }
