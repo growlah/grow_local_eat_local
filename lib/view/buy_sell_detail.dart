@@ -53,17 +53,23 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text('Seeds',
-                          style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                          style: TextStyle(
+                              fontFamily:AppConfig.roboto,
+                              color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text("\$200",
-                          style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                          style: TextStyle(
+                              fontFamily:AppConfig.roboto,
+                              color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text('Product Details',
-                          style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                          style: TextStyle(
+                              fontFamily:AppConfig.roboto,
+                              color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left:10.0,top: 10.0),
@@ -73,7 +79,9 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
                             'Nullam lobortis dolor quis non mauris, dui sed'
                             'nunc quam. Gravida commodo vel at dignissim'
                             'integer.',
-                          style: TextStyle(color: Colors.green,fontSize: 16.0),),
+                          style: TextStyle(
+                              fontFamily:AppConfig.roboto,
+                              color: Colors.green,fontSize: 16.0),),
                       )
                     ],
                   ),
@@ -101,6 +109,7 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text('BUY NOW', style: TextStyle(
+                  fontFamily:AppConfig.roboto,
                   color: Colors.white,
                 fontWeight: FontWeight.bold
               ),),

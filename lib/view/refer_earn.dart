@@ -65,6 +65,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                       color: Colors.green,
                       child: Center(
                         child: Text('60 Points', style: TextStyle(
+                            fontFamily:AppConfig.roboto,
                             color: Colors.white
                         ),),
                       ),
@@ -78,7 +79,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                       width: 137.0,
                       color: Colors.green,
                       child: Center(
-                        child: Text('Redeem', style: TextStyle(
+                        child: Text('Redeem', style: TextStyle( fontFamily:AppConfig.roboto,
                             color: Colors.white
                         ),),
                       ),
@@ -104,7 +105,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                         Center(
                           child: Text('My Rewards', style: TextStyle(
                               color: isSelected==1 ? Colors.green : Colors.grey,
-                            fontWeight: FontWeight.bold
+                              fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold
                           ),),
                         ),
                         Container(height: 2.0,
@@ -123,7 +124,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                         Center(
                           child: Text('My Referrals', style: TextStyle(
                               color: isSelected==2 ? Colors.green : Colors.grey,
-                              fontWeight: FontWeight.bold
+                              fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold
                           ),),
                         ),
                         Container(height: 2.0,
@@ -153,10 +154,10 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text('40', style: TextStyle(
-                                  color: Colors.white
+                                  fontFamily:AppConfig.roboto, color: Colors.white
                               ),),
                               Text('Coins', style: TextStyle(
-                                  color: Colors.white
+                                  fontFamily:AppConfig.roboto,  color: Colors.white
                               ),),
                             ],
                           ),
@@ -179,10 +180,10 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text('40', style: TextStyle(
-                                  color: Colors.white
+                                  fontFamily:AppConfig.roboto, color: Colors.white
                               ),),
                               Text('Coins', style: TextStyle(
-                                  color: Colors.white
+                                  fontFamily:AppConfig.roboto,color: Colors.white
                               ),),
                             ],
                           ),
@@ -230,7 +231,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                 child: Text('Get 20 coins on sharing Growlah'
                     'with your friends!',
                   style: TextStyle(color: Colors.green, fontSize: 16.0,
-                  ),),
+                    fontFamily:AppConfig.roboto,),),
               ),
             ),
             Padding(
@@ -251,10 +252,10 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text('Your referral code', style: TextStyle(
-                              color: Colors.green, fontSize: 12.0
+                              fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0
                           ),),
                           Text('ABDHGJU123', style: TextStyle(
-                              color: Colors.green, fontSize: 15.0,
+                              fontFamily:AppConfig.roboto,color: Colors.green, fontSize: 15.0,
                               fontWeight: FontWeight.bold
                           ),)
                         ],
@@ -271,10 +272,10 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text('copy', style: TextStyle(
-                              color: Colors.green, fontSize: 12.0
+                              fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0
                           ),),
                           Text('code', style: TextStyle(
-                            color: Colors.green, fontSize: 12.0,
+                            fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0,
                           ),)
                         ],
                       ),

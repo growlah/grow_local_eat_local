@@ -53,12 +53,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       padding: EdgeInsets.only(left:20.0,bottom: 10.0,top:150.0),
                       child: Text(signUpClicked?'Welcome back':'Hello',style: TextStyle(
                           fontSize: 20.0,fontWeight: FontWeight.bold,
+                          fontFamily:AppConfig.roboto,
                           color: Colors.green),)
                   ),
                   Padding(
                       padding: const EdgeInsets.only(left:20.0,bottom: 10.0),
                       child:Text(signUpClicked?'Login !':'Sign Up!',style: TextStyle(
                           fontSize: 20.0,fontWeight: FontWeight.bold,
+                          fontFamily:AppConfig.roboto,
                           color: Colors.green),)
                   ),
                   !signUpClicked?Padding(
@@ -216,7 +218,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text('Already have an account ?',
-                              style: TextStyle(color: Colors.green,fontSize: 16.0),),
+                              style: TextStyle(color: Colors.green,
+                                  fontFamily:AppConfig.roboto,
+                                  fontSize: 16.0),),
                             GestureDetector(
                               onTap: (){
                                 setState(() {
@@ -226,6 +230,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                               },
                               child: Text('Login',style: TextStyle(
                                   fontSize: 18.0,
+                                  fontFamily:AppConfig.roboto,
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline),),

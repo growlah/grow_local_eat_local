@@ -71,6 +71,7 @@ class _MyProfileState extends State<MyProfile> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text('Name',style: TextStyle(color: Colors.green,
+                    fontFamily:AppConfig.roboto,
                 fontSize: 16.0,fontWeight: FontWeight.bold
                 ),),
                 Icon(Icons.edit,color: Colors.green,size: 18.0,)
@@ -87,6 +88,7 @@ class _MyProfileState extends State<MyProfile> {
                   color: Colors.green,
                   child: Center(
                     child: Text('60 Points', style: TextStyle(
+                        fontFamily:AppConfig.roboto,
                         color: Colors.white
                     ),),
                   ),
@@ -109,21 +111,21 @@ class _MyProfileState extends State<MyProfile> {
             onTap: (){
               Navigator.pop(context);
               seeImage();},
-            title:  Center(child: Text('View',style: TextStyle(fontWeight: FontWeight.bold),)),
+            title:  Center(child: Text('View',style: TextStyle( fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold),)),
           ),
           AppConfig.divider(),
           ListTile(
             onTap: (){
               Navigator.pop(context);
               openCamera();},
-            title:  Center(child: Text('Camera',style: TextStyle(fontWeight: FontWeight.bold))),
+            title:  Center(child: Text('Camera',style: TextStyle( fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold))),
           ),
           AppConfig.divider(),
           ListTile(
             onTap: (){
               Navigator.pop(context);
               openGallery();},
-            title:  Center(child: Text('Gallery',style: TextStyle(fontWeight: FontWeight.bold))),
+            title:  Center(child: Text('Gallery',style: TextStyle( fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold))),
           ),
 
 
@@ -185,7 +187,7 @@ class _MyProfileState extends State<MyProfile> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(myList[index], style: TextStyle(
-                        color: Colors.green
+                        color: Colors.green, fontFamily:AppConfig.roboto,
                     ),),
                     index==0?
                         Icon(Icons.keyboard_arrow_down,color: Colors.green,):

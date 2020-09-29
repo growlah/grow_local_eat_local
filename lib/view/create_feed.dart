@@ -78,6 +78,7 @@ class _CreateFeedState extends State<CreateFeed> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Text('Author Name',style: TextStyle(color: Colors.black,
+                    fontFamily:AppConfig.roboto,
                     fontSize: 14.0),),
               )
             ],

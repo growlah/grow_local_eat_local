@@ -74,6 +74,7 @@ class _MonitorScreenState extends State<MonitorScreen> {
                 Padding(
                   padding: const EdgeInsets.only(left:10.0),
                   child: Text('ALERT!',style: TextStyle(color: Colors.green,
+                      fontFamily:AppConfig.roboto,
                   fontWeight: FontWeight.bold,fontSize: 20.0),),
                 )
               ],
@@ -83,7 +84,7 @@ class _MonitorScreenState extends State<MonitorScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Text('There is a disturbing weather condition.'
                 '.Please ensure your Field is met with all precautional requirements.'
-            ,style: TextStyle(color: Colors.green,fontSize: 14.0),),
+            ,style: TextStyle(color: Colors.green,fontSize: 14.0, fontFamily:AppConfig.roboto,),),
           ),
 
         ],

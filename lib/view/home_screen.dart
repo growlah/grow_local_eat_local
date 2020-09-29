@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: Colors.transparent,
             title: Text(
               AppConfig.growLah,
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: 16, fontFamily:AppConfig.roboto,),
             ),
             elevation: 0.0,
           ),
@@ -72,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
+                        fontFamily:AppConfig.roboto,
                         color: Colors.green),
                   ),
                 ),
@@ -164,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           visible: index!=0,
                           child: Text(
                             optionsList[index].title,
-                            style: TextStyle(color: Colors.green),
+                            style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
                           ),
                         ),
                       ],

@@ -64,7 +64,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text('Rose',style: TextStyle(fontSize: 18.0,
-                              color: Colors.green),),
+                                  fontFamily:AppConfig.roboto,color: Colors.green),),
                             )),
                       ),
                       Padding(
@@ -77,7 +77,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text('Rosaceae family'
                                 ,style: TextStyle(fontSize: 18.0,
-                                    color: Colors.green),),
+                                      fontFamily:AppConfig.roboto,color: Colors.green),),
                               )),
                         ),
                       )
@@ -91,7 +91,9 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                 Padding(
                   padding: const EdgeInsets.only(left:10.0),
                   child: Text('About',
-                    style: TextStyle(color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
+                    style: TextStyle(
+                        fontFamily:AppConfig.roboto,
+                        color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left:10.0,top: 10.0),
@@ -101,7 +103,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                       'Nullam lobortis dolor quis non mauris, dui sed'
                       'nunc quam. Gravida commodo vel at dignissim'
                       'integer.',
-                    style: TextStyle(color: Colors.green,fontSize: 12.0),),
+                    style: TextStyle( fontFamily:AppConfig.roboto,color: Colors.green,fontSize: 12.0),),
                 ),
               ],
             ),
@@ -144,7 +146,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                       color: Colors.green,fontSize: 12.0
                     ),),
                     Text(getPercentage(position),
-                    style: TextStyle(color: Colors.green,fontSize: 18.0,fontWeight: FontWeight.bold),),
+                    style: TextStyle( fontFamily:AppConfig.roboto,color: Colors.green,fontSize: 18.0,fontWeight: FontWeight.bold),),
                   ],
                 ),
               );

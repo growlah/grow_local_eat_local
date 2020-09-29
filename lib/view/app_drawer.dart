@@ -81,7 +81,10 @@ class _AppDrawerState extends State<AppDrawer> {
                            Image.asset(getImages(index),),
                            Padding(
                              padding: const EdgeInsets.all(10.0),
-                             child: Text(drawerList[index].title,style: TextStyle(fontWeight: FontWeight.bold),),
+                             child: Text(drawerList[index].title,
+                               style: TextStyle(
+                                   fontFamily:AppConfig.roboto,
+                                   fontWeight: FontWeight.bold),),
                            ),
                          ],
                        )

@@ -65,7 +65,7 @@ class _ChatBotState extends State<ChatBot> {
                       null,
                       decoration: InputDecoration(
                           hintText:'Type a message',
-                          hintStyle: TextStyle(color: Colors.green,),
+                          hintStyle: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
                           border: InputBorder.none,
                         suffixIcon: GestureDetector(
                           onTap: (){},
@@ -151,7 +151,8 @@ class _ChatBotState extends State<ChatBot> {
                 },
                 title: Center(
                     child: Text('Camera',
-                        style: TextStyle(fontWeight: FontWeight.bold))),
+                        style: TextStyle( fontFamily:AppConfig.roboto,
+                            fontWeight: FontWeight.bold))),
               ),
               AppConfig.divider(),
               ListTile(
@@ -161,7 +162,8 @@ class _ChatBotState extends State<ChatBot> {
                 },
                 title: Center(
                     child: Text('Gallery',
-                        style: TextStyle(fontWeight: FontWeight.bold))),
+                        style: TextStyle(fontWeight: FontWeight.bold,
+                          fontFamily:AppConfig.roboto,))),
               ),
             ],
           );

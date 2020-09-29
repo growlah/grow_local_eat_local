@@ -58,6 +58,7 @@ class _MySubscriptionsState extends State<MySubscriptions> {
                               child: Padding(
                                 padding: const EdgeInsets.only(left:10.0),
                                 child: Text('CULTIVATION',style: TextStyle(color: Colors.green,
+                                    fontFamily:AppConfig.roboto,
                                     fontWeight: FontWeight.bold,fontSize: 14.0),),
                               ),
                             ),

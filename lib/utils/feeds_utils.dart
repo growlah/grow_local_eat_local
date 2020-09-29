@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grow_lah/model/feeds_model.dart';
+import 'app_config.dart';
 import 'assets.dart';
 
 class FeedsUtils{
@@ -21,7 +22,7 @@ class FeedsUtils{
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Text(feedsList.authorName??'',style: TextStyle(color: Colors.black,
-                    fontSize: 14.0),),
+                    fontFamily:AppConfig.roboto,fontSize: 14.0),),
               )
             ],
           )),
@@ -49,12 +50,12 @@ class FeedsUtils{
                 },
                 child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,
                 color: getColor(isLiked),)),
-            Text('0'+' likes'),
+            Text('0'+' likes',style: TextStyle( fontFamily:AppConfig.roboto,),),
             Padding(
               padding: const EdgeInsets.only(left:8.0),
               child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,),
             ),
-            Text('0'+' comments'),
+            Text('0'+' comments',style: TextStyle( fontFamily:AppConfig.roboto,),),
             Padding(
               padding: const EdgeInsets.only(left:8.0),
               child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,),
@@ -69,7 +70,7 @@ class FeedsUtils{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(feedsList.content??''),
+          Text(feedsList.content??'',style: TextStyle( fontFamily:AppConfig.roboto,),),
           loadForImage(feedsList.image),
           loadForVideo()
         ],

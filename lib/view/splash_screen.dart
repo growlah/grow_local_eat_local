@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/view/authentication.dart';
 class SplashScreen extends StatefulWidget {
@@ -45,17 +46,17 @@ class _SplashScreenState extends State<SplashScreen> {
             padding: const EdgeInsets.all(5.0),
             child: Text(
               'GrowLah',
-              style: new TextStyle(
+              style: new TextStyle( fontFamily:AppConfig.roboto,
                   fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: Text('GrowLocal EatLocal',
-              style: new TextStyle(
+              style: new TextStyle( fontFamily:AppConfig.roboto,
                   fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),),
           ),
           Text('Powered by ',
-            style: new TextStyle(
+            style: new TextStyle( fontFamily:AppConfig.roboto,
                 fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),),
           Image.asset(Assets.bottomLogo),
         ],

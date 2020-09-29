@@ -42,7 +42,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
         ),
         title: Text(
           'BUY/SELL',
-          style: TextStyle(
+          style: TextStyle( fontFamily:AppConfig.roboto,
               fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green),
         ),
         actions: <Widget>[
@@ -61,6 +61,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: <Widget>[
                Text('Top Seller',style: TextStyle(fontSize: 16.0,
+                   fontFamily:AppConfig.roboto,
                color: Colors.green),),
               Image.asset(Assets.filter)
              ],
@@ -103,6 +104,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
                               Padding(
                                 padding: const EdgeInsets.only(left:8.0,top: 5.0),
                                 child: Text('Fertilizer',style: TextStyle(
+                                    fontFamily:AppConfig.roboto,
                                   color: Colors.green,fontWeight: FontWeight.bold,
                                   fontSize: 14.0
                                 ),),
@@ -110,6 +112,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
                               Padding(
                                 padding: const EdgeInsets.only(left:8.0,top:5.0),
                                 child: Text("\$100",style: TextStyle(
+                                    fontFamily:AppConfig.roboto,
                                     color: Colors.green,fontWeight: FontWeight.bold,
                                     fontSize: 14.0
                                 ),),

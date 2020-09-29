@@ -55,10 +55,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                 child: Padding(
                                   padding: const EdgeInsets.only(left:10.0),
                                   child: Text('ALERT!',style: TextStyle(color: Colors.green,
-                                      fontWeight: FontWeight.bold,fontSize: 14.0),),
+                                      fontWeight: FontWeight.bold,fontSize: 14.0, fontFamily:AppConfig.roboto,),),
                                 ),
                               ),
-                              Text('x',style: TextStyle(color: Colors.grey),)
+                              Text('x',style: TextStyle(color: Colors.grey, fontFamily:AppConfig.roboto,),)
                             ],
                           ),
                         ),
@@ -70,6 +70,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         'requirements.',
                                 overflow: TextOverflow.clip,
                                 maxLines: null,style: TextStyle(
+                                    fontFamily:AppConfig.roboto,
                                   color: Colors.green,fontSize: 12.0
                               ),),
                             ),

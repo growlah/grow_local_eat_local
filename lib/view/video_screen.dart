@@ -109,7 +109,7 @@ class _VideosScreenState extends State<VideosScreen> {
                               height: 40.0,
                               child: Center(
                                 child: Text('Cultivation',style: TextStyle(
-                                  color: Colors.green
+                                    fontFamily:AppConfig.roboto, color: Colors.green
                                 ),),
                               ),
                             )

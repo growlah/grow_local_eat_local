@@ -17,7 +17,7 @@ class AppConfig{
   static String verify='VERIFY';
   static String pleaseEnterOtp='Please Enter OTP';
   static String pleaseEnterPh='Please Enter Phone Number';
-
+ static String roboto='RobotoRegular';
   static showToast(String text) {
     Fluttertoast.showToast(
         msg: text, toastLength: Toast.LENGTH_SHORT, backgroundColor:Colors.grey);

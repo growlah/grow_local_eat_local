@@ -46,14 +46,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top:200.0),
                   child: Text('Select Category',style: TextStyle(color: Colors.green,fontSize: 18.0,
-                      fontWeight: FontWeight.bold),),
+                      fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top:40.0,right: 50.0,left: 50.0),
                   child: Center(
                     child: Text('Select the category type which you would like to know'
                         ' about through this app !',style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,
                       color: Colors.green,),),
                   ),
                 ),

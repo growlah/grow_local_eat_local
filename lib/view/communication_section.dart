@@ -57,7 +57,7 @@ class _CommunicationSectionState extends State<CommunicationSection> {
                       ),
                     ),
                   ),
-                  Text("Sample")
+                  Text("Sample",style: TextStyle( fontFamily:AppConfig.roboto,),)
                 ],
               );
               }),

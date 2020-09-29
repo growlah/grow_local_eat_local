@@ -41,7 +41,7 @@ class _DonateScreenState extends State<DonateScreen> {
           children: <Widget>[
             Text('Make a Donation!',style: TextStyle(
               color: Colors.green,fontSize: 16.0,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.bold,fontFamily:AppConfig.roboto
             ),),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -59,6 +59,7 @@ class _DonateScreenState extends State<DonateScreen> {
                           padding: const EdgeInsets.all(20.0),
                           child: Text('Enter Amount',
                           style: TextStyle(color: Colors.green,
+                              fontFamily:AppConfig.roboto,
                           fontSize: 18.0,fontWeight: FontWeight.bold),),
                         ),
                         Padding(
@@ -82,6 +83,7 @@ class _DonateScreenState extends State<DonateScreen> {
                                     child: TextField(
                                       controller: textEditingController,
                                       style: TextStyle(color: Colors.green,
+                                          fontFamily:AppConfig.roboto,
                                       fontSize: 18.0,fontWeight: FontWeight.bold),
                                       textAlign: TextAlign.start,
                                       keyboardType:TextInputType.numberWithOptions(),
@@ -113,6 +115,7 @@ class _DonateScreenState extends State<DonateScreen> {
               padding: const EdgeInsets.only(top:30.0,left: 8.0),
               child: Text('Choose Payment Method',style: TextStyle(
                 fontWeight: FontWeight.bold,fontSize: 16.0,
+                fontFamily:AppConfig.roboto,
                 color: Colors.green,
               ),),
             ),
@@ -133,6 +136,7 @@ class _DonateScreenState extends State<DonateScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left:10.0),
                       child: Text('UPI PAYMENT',style: TextStyle(color: Colors.green,
+                          fontFamily:AppConfig.roboto,
                       fontSize: 14.0,fontWeight: FontWeight.bold),),
                     )
                   ],
@@ -155,6 +159,7 @@ class _DonateScreenState extends State<DonateScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left:10.0),
                       child: Text('Credit/Debit/ATM Card',style: TextStyle(color: Colors.green,
+                          fontFamily:AppConfig.roboto,
                           fontSize: 14.0,fontWeight: FontWeight.bold),),
                     )
                   ],
@@ -187,6 +192,7 @@ class _DonateScreenState extends State<DonateScreen> {
             child: Center(
               child: Text('DONATE', style: TextStyle(
                   color: Colors.white,
+                  fontFamily:AppConfig.roboto,
                   fontWeight: FontWeight.bold
               ),),
             ),
@@ -217,6 +223,7 @@ class _DonateScreenState extends State<DonateScreen> {
                    child: Padding(
                      padding: const EdgeInsets.only(left:10.0),
                      child: Text('Google Pay',style: TextStyle(color: Colors.green,
+                         fontFamily:AppConfig.roboto,
                          fontSize: 14.0,fontWeight: FontWeight.bold),),
                    ),
                  ),
@@ -242,6 +249,7 @@ class _DonateScreenState extends State<DonateScreen> {
                  Padding(
                    padding: const EdgeInsets.only(left:10.0),
                    child: Text('UPI Id',style: TextStyle(color: Colors.green,
+                       fontFamily:AppConfig.roboto,
                        fontSize: 14.0,fontWeight: FontWeight.bold),),
                  )
                ],

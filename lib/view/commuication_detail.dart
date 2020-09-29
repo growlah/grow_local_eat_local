@@ -88,9 +88,13 @@ class _DetailCommunicationState extends State<DetailCommunication> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top:32.0,bottom: 11.0),
-                              child: Text(feedsList[index].content,style: TextStyle(color: Colors.green),),
+                              child: Text(feedsList[index].content,style: TextStyle(
+                                  fontFamily:AppConfig.roboto,
+                                  color: Colors.green),),
                             ),
-                            Text('Wed 23, Sep 2020',style: TextStyle(color: Colors.grey),),
+                            Text('Wed 23, Sep 2020',style: TextStyle(
+                                fontFamily:AppConfig.roboto,
+                                color: Colors.grey),),
                           ],
                         )
                       ],
@@ -121,12 +125,12 @@ class _DetailCommunicationState extends State<DetailCommunication> {
                });
                 },
                 child:getLikeIcon(feedsList.isLiked??false)),
-            Text(feedsList.likes.toString()+' likes'),
+            Text(feedsList.likes.toString()+' likes',style: TextStyle( fontFamily:AppConfig.roboto,),),
             Padding(
               padding: const EdgeInsets.only(left:8.0),
               child: Image.asset(Assets.comment,height: 20.0,width: 20.0,),
             ),
-            Text('0'+' comments'),
+            Text('0'+' comments',style: TextStyle( fontFamily:AppConfig.roboto,),),
             // Padding(
             //   padding: const EdgeInsets.only(left:8.0),
             //   child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,),

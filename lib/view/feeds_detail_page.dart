@@ -63,12 +63,14 @@ class _FeedsDetailState extends State<FeedsDetail> {
                   });
                 },
                 child:getLikeIcon(feedsList.isLiked??false)),
-            Text(feedsList.likes.toString()+' likes'),
+            Text(feedsList.likes.toString()+' likes',style: TextStyle(
+              fontFamily:AppConfig.roboto,
+            ),),
             Padding(
               padding: const EdgeInsets.only(left:8.0),
               child: Image.asset(Assets.comment,height: 20.0,width: 20.0,),
             ),
-            Text('0'+' comments'),
+            Text('0'+' comments',style: TextStyle( fontFamily:AppConfig.roboto,),),
             // Padding(
             //   padding: const EdgeInsets.only(left:8.0),
             //   child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,),

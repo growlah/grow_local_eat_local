@@ -56,7 +56,7 @@ class _SettingsState extends State<Settings> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(settingsList[index].title, style: TextStyle(
-                                color: Colors.green,fontSize: 16.0
+                                fontFamily:AppConfig.roboto,color: Colors.green,fontSize: 16.0
                             ),),
                            settingsList[index].isChecked?
                                Image.asset(Assets.checkedIcon):Container()
