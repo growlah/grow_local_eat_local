@@ -34,7 +34,7 @@ class _ChatBotState extends State<ChatBot> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppConfig.appBar('CHAT BOT', context,true),
+        appBar: AppConfig.appBar('CHAT BOT', context, true),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -43,95 +43,41 @@ class _ChatBotState extends State<ChatBot> {
                   child: Container(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
+                  reverse: true,
                   physics: ScrollPhysics(parent: ScrollPhysics()),
                   // child:Text('testest') ,
                 ),
               )),
               Neumorphic(
+                style: NeumorphicStyle(color: Colors.transparent),
                 boxShape: AppConfig.neuShape,
-                style:AppConfig.neuStyle,
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Container(
-                    height:textEditingController.text.length>20?100: 50.0,
-                    child: TextField(
-                      controller: textEditingController,
-                      textAlign: TextAlign.start,
-                      maxLines: null,
-                      buildCounter: (BuildContext context,
-                          {int currentLength,
-                            int maxLength,
-                            bool isFocused}) =>
-                      null,
-                      decoration: InputDecoration(
-                          hintText:'Type a message',
-                          hintStyle: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
-                          border: InputBorder.none,
-                        suffixIcon: GestureDetector(
-                          onTap: (){},
-                          child: Image.asset(Assets.send,width: 20.0,height: 20.0,),
-                        ),
-                        prefixIcon: GestureDetector(
-                          onTap: (){
-                            attachments();
-                          },
-                          child: Icon(Icons.add,color: Colors.green,size: 20.0,),
-                        ),
-                        contentPadding: const EdgeInsets.all(10.0)
-                      ),
-
+                child: ListTile(
+                  trailing: GestureDetector(
+                    onTap: (){},
+                    child: Image.asset(Assets.send,width: 20.0,height: 20.0,),
+                  ),
+                  leading: GestureDetector(
+                    onTap: () {
+                      attachments();
+                    },
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.green,
+                      size: 20.0,
                     ),
                   ),
+                  title:TextField(
+                    controller: textEditingController,
+                    textAlign: TextAlign.start,
+                    maxLines: null,
+                    buildCounter: (BuildContext context,
+                        {int currentLength,
+                          int maxLength,
+                          bool isFocused}) =>
+                    null,
+                  ),
                 ),
-              ),
-              // Neumorphic(
-              //   boxShape: AppConfig.neuShape,
-              //   style: AppConfig.neuStyle,
-              //   child: Container(
-              //     height: textEditingController.text.length > 20 ? 100 : 50,
-              //     decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              //     ),
-              //     margin: EdgeInsets.only(left: 10.0, right: 10.0),
-              //     child: TextField(
-              //       controller: textEditingController,
-              //       keyboardType: TextInputType.multiline,
-              //       textInputAction: TextInputAction.done,
-              //       maxLines: null,
-              //       maxLength: 10000,
-              //       buildCounter: (BuildContext context,
-              //               {int currentLength,
-              //               int maxLength,
-              //               bool isFocused}) =>
-              //           null,
-              //       decoration: InputDecoration(
-              //           hintText: 'Type a message',
-              //           hintStyle: TextStyle(
-              //             color: Colors.green,
-              //           ),
-              //           contentPadding: EdgeInsets.all(10.0),
-              //           border: InputBorder.none,
-              //           suffixIcon: GestureDetector(
-              //             onTap: () {},
-              //             child: Image.asset(
-              //               Assets.send,
-              //               width: 20.0,
-              //               height: 20.0,
-              //             ),
-              //           ),
-              //           prefixIcon: GestureDetector(
-              //             onTap: () {
-              //               attachments();
-              //             },
-              //             child: Icon(
-              //               Icons.add,
-              //               color: Colors.green,
-              //               size: 20.0,
-              //             ),
-              //           )),
-              //     ),
-              //   ),
-              // )
+              )
             ],
           ),
         ));
@@ -151,7 +97,8 @@ class _ChatBotState extends State<ChatBot> {
                 },
                 title: Center(
                     child: Text('Camera',
-                        style: TextStyle( fontFamily:AppConfig.roboto,
+                        style: TextStyle(
+                            fontFamily: AppConfig.roboto,
                             fontWeight: FontWeight.bold))),
               ),
               AppConfig.divider(),
@@ -162,8 +109,10 @@ class _ChatBotState extends State<ChatBot> {
                 },
                 title: Center(
                     child: Text('Gallery',
-                        style: TextStyle(fontWeight: FontWeight.bold,
-                          fontFamily:AppConfig.roboto,))),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: AppConfig.roboto,
+                        ))),
               ),
             ],
           );

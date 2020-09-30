@@ -48,6 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: <Widget>[
     AppConfig.bgWave(context),
+        Center(child: Container(
+            height: 100.0,width: 100.0,
+            child: Image.asset(Assets.bigAppIcon,fit: BoxFit.fill,))),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
@@ -60,38 +63,40 @@ class _HomeScreenState extends State<HomeScreen> {
             elevation: 0.0,
           ),
           drawer: getDrawer(),
-          body: Container(
-            color: Colors.transparent,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0, left: 10.0),
-                  child: Text(
-                    'Welcome !',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily:AppConfig.roboto,
-                        color: Colors.green),
+          body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            physics: AlwaysScrollableScrollPhysics(),
+            child: Container(
+              color: Colors.transparent,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, left: 10.0),
+                    child: Text(
+                      'Welcome !',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily:AppConfig.roboto,
+                          color: Colors.green),
+                    ),
                   ),
-                ),
-                Expanded(child: mainView()),
-
-              ],
+                  mainView(),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom:8.0),
+                    child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatBot()));
+                        },
+                        child: Center(child: bottomIcon())),
+                  )
+                ],
+              ),
             ),
           ),
         ),
-        Positioned(
-          bottom: 20.0,
-          left: MediaQuery.of(context).size.width/2.5,
-          child: GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)
-                =>  ChatBot()));
-              },
-              child: bottomIcon()),
-        )
       ],
     );
   }
@@ -122,11 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget mainView() {
-    return Stack(
-      children: <Widget>[
-        Center(child: Container(
-        height: 100.0,width: 100.0,
-            child: Image.asset(Assets.bigAppIcon,fit: BoxFit.fill,))),
+    return Container(
+      child:
         GridView.builder(
             scrollDirection: Axis.vertical,
             physics:NeverScrollableScrollPhysics(),
@@ -182,8 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               );
-            })
-      ],
+            }),
     );
   }
 

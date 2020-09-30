@@ -43,7 +43,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
+            physics: AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             child: Container(
               child: Column(

@@ -37,82 +37,85 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         AppConfig.bgWave(context),
         Scaffold(
           backgroundColor: Colors.transparent,
-          resizeToAvoidBottomPadding: false,
-          body: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                // AppConfig.clippedPath(context),
-                Padding(
-                  padding: const EdgeInsets.only(top:200.0),
-                  child: Text('Select Category',style: TextStyle(color: Colors.green,fontSize: 18.0,
-                      fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top:40.0,right: 50.0,left: 50.0),
-                  child: Center(
-                    child: Text('Select the category type which you would like to know'
-                        ' about through this app !',style: TextStyle(
-                      fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,
-                      color: Colors.green,),),
+          body: SingleChildScrollView(
+            physics:AlwaysScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  // AppConfig.clippedPath(context),
+                  Padding(
+                    padding: const EdgeInsets.only(top:150.0),
+                    child: Text('Select Category',style: TextStyle(color: Colors.green,fontSize: 18.0,
+                        fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,),),
                   ),
-                ),
-                ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount:onBoardsList.length,
-                    itemBuilder: (context,index){
-                      return  Center(
-                        child: GestureDetector(
-                          onTap: (){
-                            selectedIndex=index;
-                            isSelected=true;
-                            setState(() {
-                            });
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(top:20.0),
-                            child: Neumorphic(
-                              style: NeumorphicStyle(
-                                depth: 8,
-                                shape: NeumorphicShape.flat,
-                              ),
-                              boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
-                              child: Container(
-                                color:isSelected?getColor(index):Colors.white,
-                                height: 50.0,
-                                width: MediaQuery.of(context).size.width*0.6,
-                                child: Center(child: Text(onBoardsList[index].content),),
+                  Padding(
+                    padding: const EdgeInsets.only(top:40.0,right: 50.0,left: 50.0),
+                    child: Center(
+                      child: Text('Select the category type which you would like to know'
+                          ' about through this app !',style: TextStyle(
+                        fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,
+                        color: Colors.green,),),
+                    ),
+                  ),
+                  ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount:onBoardsList.length,
+                      itemBuilder: (context,index){
+                        return  Center(
+                          child: GestureDetector(
+                            onTap: (){
+                              selectedIndex=index;
+                              isSelected=true;
+                              setState(() {
+                              });
+                            },
+                            child: Padding(
+                              padding:  EdgeInsets.only(top:20.0,bottom:index==2?20:0),
+                              child: Neumorphic(
+                                style: NeumorphicStyle(
+                                  depth: 8,
+                                  shape: NeumorphicShape.flat,
+                                ),
+                                boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(10.0))),
+                                child: Container(
+                                  color:isSelected?getColor(index):Colors.white,
+                                  height: 50.0,
+                                  width: MediaQuery.of(context).size.width*0.6,
+                                  child: Center(child: Text(onBoardsList[index].content),),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      }),
 
-                isSelected?GestureDetector(
-                  onTap: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context)=>HomeScreen()
-                    ));
-                  },
-                  child: Padding(padding: const EdgeInsets.only(top:100.0),
-                    child: Center(
-                      child: Container(
-                        height: 50.0,
-                        width: 50.0,
-                        child: Neumorphic(
-                          boxShape: NeumorphicBoxShape.circle(),
-                          style: NeumorphicStyle(
-                              color: Colors.white
+                  isSelected?GestureDetector(
+                    onTap: (){
+                      Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context)=>HomeScreen()
+                      ));
+                    },
+                    child: Padding(padding: const EdgeInsets.only(top:100.0,bottom: 20.0),
+                      child: Center(
+                        child: Container(
+                          height: 50.0,
+                          width: 50.0,
+                          child: Neumorphic(
+                            boxShape: NeumorphicBoxShape.circle(),
+                            style: NeumorphicStyle(
+                                color: Colors.white
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward_ios,color: Colors.green,size: 30.0,),
                           ),
-                          child: Icon(
-                            Icons.arrow_forward_ios,color: Colors.green,size: 30.0,),
                         ),
-                      ),
-                    ),),
-                ):Container()
-              ],
+                      ),),
+                  ):Container()
+                ],
+              ),
             ),
           ),
         )
