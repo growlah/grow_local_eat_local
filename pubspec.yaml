@@ -33,6 +33,7 @@ dependencies:
   path_provider:
   image_picker:
   camera:
+  intl: ^0.15.7
 dev_dependencies:
   flutter_test:
     sdk: flutter

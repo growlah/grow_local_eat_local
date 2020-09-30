@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:grow_lah/model/message.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:image_picker/image_picker.dart';
@@ -19,7 +20,7 @@ class _ChatBotState extends State<ChatBot> {
   TextEditingController textEditingController = TextEditingController();
   File imageFile;
   int length=0;
- List<dynamic> messageList=List<dynamic>();
+ List<Messages> messageList=List<Messages>();
   @override
   void initState() {
     super.initState();
@@ -38,20 +39,16 @@ class _ChatBotState extends State<ChatBot> {
         appBar: AppConfig.appBar('CHAT BOT', context, true),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Container(
+          child: Container( width: double.infinity,
+            height: double.infinity,
             child: Column(
               children: <Widget>[
-               Center(
-                 child: Container(
-                   child: Text('Today'),
-                 ),
-               ),
                Flexible(
                  child: ListView.builder(
-                   itemCount: messageList.length,
                    reverse: true,
+                   itemCount: messageList.length,
                    itemBuilder: (context,index){
-                     return chat(messageList[index],0);
+                     return chat(messageList[index].msg,messageList[index].side);
                    },
                  ),
                ),
@@ -62,8 +59,9 @@ class _ChatBotState extends State<ChatBot> {
                   child: ListTile(
                     trailing: GestureDetector(
                       onTap: () {
+                        var msg=Messages(textEditingController.text, 1);
                        setState(() {
-                         messageList.add(textEditingController.text);
+                         messageList.insert(0,msg);
                          textEditingController.clear();
                        });
                       },
@@ -75,7 +73,12 @@ class _ChatBotState extends State<ChatBot> {
                     ),
                     leading: GestureDetector(
                       onTap: () {
-                        attachments();
+                        // attachments();
+                        var msg=Messages(textEditingController.text, 0);
+                        setState(() {
+                          messageList.insert(0,msg);
+                        textEditingController.clear();
+                      });
                       },
                       child: Icon(
                         Icons.add,
@@ -161,34 +164,54 @@ class _ChatBotState extends State<ChatBot> {
     Navigator.of(context).pop();
   }
 
-  Widget chat(String message,int data) {
+  Widget chat(String message, int data) {
     return Container(
-      padding: EdgeInsets.only(left: 20.0,right: 20.0),
-      child: Row(
-        mainAxisAlignment: data!=0?MainAxisAlignment.start:MainAxisAlignment.end,
-      children: <Widget>[
+      padding: EdgeInsets.only(left: 20.0, right: 20.0,top:10.0,bottom: 10.0),
 
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Neumorphic(
-            style: NeumorphicStyle(color: Colors.green),
-              boxShape: NeumorphicBoxShape.roundRect(BorderRadius.only(
-                  topLeft: Radius.circular(data!=0?0:5.0),
-                  bottomLeft: Radius.circular(5.0),
-                  bottomRight: Radius.circular(5.0),
-                  topRight: Radius.circular(data!=0?5.0:0)
-              )),
-            child: Padding(padding: const EdgeInsets.all(10.0),
-            child: Text(message,style: TextStyle(color:Colors.white,
-            fontFamily: AppConfig.roboto),),),
+      child: Row(
+        mainAxisAlignment: data == 1 ? MainAxisAlignment.end : MainAxisAlignment.start,
+        children: [
+          data == 0 ? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage(Assets.appLogo),
+            ),
+          ) : Container(),
+
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+                    child: Neumorphic(
+                  style: AppConfig.neuStyle,
+                      boxShape: NeumorphicBoxShape.roundRect(BorderRadius.only(
+                          topLeft: data==0?Radius.circular(0.0):Radius.circular(5.0),
+                          bottomRight: Radius.circular(5.0),bottomLeft: Radius.circular(5.0),
+                          topRight: data==1?Radius.circular(0.0):Radius.circular(5.0))),
+                      child: Container(
+                        color: Colors.green,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            message,
+                            overflow: TextOverflow.clip,
+                            style: TextStyle(
+                                color: Colors.white, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
           ),
-        ),
-        Container(
-          height: 50.0,width: 50.0,
-          child: CircleAvatar(backgroundImage:data!=0?
-          AssetImage(Assets.appIcon):AssetImage(Assets.appLogo),),
-        ),
-      ],
+          data == 1? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage(Assets.appIcon),
+            ),
+          ) : Container(),
+
+        ],
       ),
     );
   }

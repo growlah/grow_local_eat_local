@@ -11,6 +11,7 @@ import 'package:grow_lah/view/app_drawer.dart';
 import 'package:grow_lah/view/buy_sell.dart';
 import 'package:grow_lah/view/chat_bot.dart';
 import 'package:grow_lah/view/communication_section.dart';
+import 'package:grow_lah/view/demo_chat.dart';
 import 'package:grow_lah/view/monitor_screen.dart';
 import 'package:grow_lah/view/take_picture.dart';
 import 'package:grow_lah/view/video_screen.dart';
