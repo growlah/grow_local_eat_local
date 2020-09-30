@@ -7,9 +7,9 @@ class OptionsList{
       Options(1,"VIDEO GUIDE"),
       Options(2,"MONITOR"),
       Options(3,"COMMUNITY"),
-      Options(4,"BUY&SELL"),
+      Options(4,"BUY/SELL"),
       Options(5,"NEWS FEED"),
-      Options(6,"SCAN SPOT")
+      Options(6,"SCAN & SPOT")
     ];
     return options;
   }
