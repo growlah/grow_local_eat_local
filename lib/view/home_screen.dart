@@ -65,24 +65,24 @@ class _HomeScreenState extends State<HomeScreen> {
           drawer: getDrawer(),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            physics: AlwaysScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             child: Container(
               color: Colors.transparent,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20.0, left: 10.0),
-                    child: Text(
-                      'Welcome !',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          fontFamily:AppConfig.roboto,
-                          color: Colors.green),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 20.0, left: 10.0),
+                  //   child: Text(
+                  //     'Welcome !',
+                  //     style: TextStyle(
+                  //         fontSize: 20.0,
+                  //         fontWeight: FontWeight.bold,
+                  //         fontFamily:AppConfig.roboto,
+                  //         color: Colors.green),
+                  //   ),
+                  // ),
                   mainView(),
                   Padding(
                     padding: const EdgeInsets.only(bottom:8.0),
@@ -142,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemSelected(index);
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0),
+                  padding: const EdgeInsets.only(left: 20.0,right: 20.0),
                   child: Center(
                     child: Neumorphic(
                       boxShape: NeumorphicBoxShape.roundRect(
