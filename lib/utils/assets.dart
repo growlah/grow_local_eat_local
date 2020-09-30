@@ -78,4 +78,5 @@ class Assets{
   static String comm6='images/comm6.png';
   static String comm4='images/comm4.jpeg';
   static String comm5='images/comm5.jpeg';
+  static String bigAppIcon='images/big_appIcon.png';
 }

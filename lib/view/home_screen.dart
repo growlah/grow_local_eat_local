@@ -122,62 +122,69 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget mainView() {
-    return GridView.builder(
-        scrollDirection: Axis.vertical,
-        physics:NeverScrollableScrollPhysics(),
-        itemCount: optionsList.length,
-        shrinkWrap: true,
-        gridDelegate:
+    return Stack(
+      children: <Widget>[
+        Center(child: Container(
+        height: 100.0,width: 100.0,
+            child: Image.asset(Assets.bigAppIcon,fit: BoxFit.fill,))),
+        GridView.builder(
+            scrollDirection: Axis.vertical,
+            physics:NeverScrollableScrollPhysics(),
+            itemCount: optionsList.length,
+            shrinkWrap: true,
+            gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: (){
-              itemSelected(index);
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0),
-              child: Center(
-                child: Neumorphic(
-                  boxShape: NeumorphicBoxShape.roundRect(
-                      BorderRadius.all(Radius.circular(25.0))),
-                  style: NeumorphicStyle(
-                      shadowDarkColor: Colors.grey,
-                      lightSource: LightSource.topLeft),
-                  child: Container(
-                    color: Colors.white,
-                    height: getHeight(index),
-                    width: 141.0,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Visibility(
-                          visible: index==0,
-                          child: Text(
-                            optionsList[index].title,
-                            style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
-                          ),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: (){
+                  itemSelected(index);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10.0,left: 20.0,right: 20.0),
+                  child: Center(
+                    child: Neumorphic(
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.all(Radius.circular(25.0))),
+                      style: NeumorphicStyle(
+                          shadowDarkColor: Colors.grey,
+                          lightSource: LightSource.topLeft),
+                      child: Container(
+                        color: Colors.white,
+                        height: getHeight(index),
+                        width: 141.0,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Visibility(
+                              visible: index==0,
+                              child: Text(
+                                optionsList[index].title,
+                                style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
+                              ),
+                            ),
+                            Image.asset(
+                              getImage(index),
+                              height: 44.0,
+                              width: 60.0,
+                            ),
+                            Visibility(
+                              visible: index!=0,
+                              child: Text(
+                                optionsList[index].title,
+                                style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
+                              ),
+                            ),
+                          ],
                         ),
-                        Image.asset(
-                          getImage(index),
-                          height: 44.0,
-                          width: 60.0,
-                        ),
-                        Visibility(
-                          visible: index!=0,
-                          child: Text(
-                            optionsList[index].title,
-                            style: TextStyle(color: Colors.green, fontFamily:AppConfig.roboto,),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          );
-        });
+              );
+            })
+      ],
+    );
   }
 
   // ignore: missing_return
