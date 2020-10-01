@@ -20,6 +20,8 @@ class PostAdScreen extends StatefulWidget {
 class _PostAdScreenState extends State<PostAdScreen> {
   String imagePath='';
   File imageFile;
+  bool categorySelected=false;
+  PostAdController controller=PostAdController();
   @override
   void initState() {
     super.initState();
@@ -43,7 +45,25 @@ class _PostAdScreenState extends State<PostAdScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text('Select Category',style: getStyle(),),
-             getCategory(),
+              Neumorphic(
+                boxShape: getNeuShape(),
+                style: getNeuStyle(),
+                child: Container(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          height: 50.0,
+                          child: getCategory(),
+                        ),
+                      ),
+                      Container(
+                        child: getPopUp(),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               Text('Purpose',style: getStyle(),),
               getPurpose(),
               Text('Add Image',style: getStyle(),),
@@ -104,36 +124,25 @@ class _PostAdScreenState extends State<PostAdScreen> {
         surfaceIntensity: 0.3,color: Colors.white12);
   }
   getCategory(){
-    return  GestureDetector(
-      onTap: (){
-        getPopUp();
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(top:8.0,bottom: 8.0),
-        child: Neumorphic(
-          boxShape: getNeuShape(),
-          style: getNeuStyle(),
-          child: Container(
-            height: 50.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: TextField(
-              controller: PostAdController.category,
-              textAlign: TextAlign.start,
-              enabled: false,
-              buildCounter: (BuildContext context,
-                  {int currentLength,
-                    int maxLength,
-                    bool isFocused}) =>
-              null,
-              decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(10.0),
-                  border: InputBorder.none,
-                suffixIcon: getPopUp()
-              ),
-
-            ),
+    return  Padding(
+      padding: const EdgeInsets.only(top:8.0,bottom: 8.0),
+      child: Container(
+        height: 50.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: TextField(
+          controller: PostAdController.category,
+          textAlign: TextAlign.start,
+          enabled: false,
+          buildCounter: (BuildContext context,
+              {int currentLength,
+                int maxLength,
+                bool isFocused}) =>
+          null,
+          decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(10.0),
+              border: InputBorder.none,
           ),
         ),
       ),
@@ -312,23 +321,32 @@ class _PostAdScreenState extends State<PostAdScreen> {
   }
 
   postAdBtn() {
-    return  Padding(
-      padding: const EdgeInsets.only(top:15.0,bottom: 15.0),
-      child: Neumorphic(
-        style: AppConfig.neuStyle,
-        boxShape: AppConfig.neuShape,
-        child: Container(
-          height: 55.0,
-          width: 374.0,
-          color: Colors.green,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Center(
-              child: Text('POST AD', style: TextStyle(
-                  fontFamily:AppConfig.roboto,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
-              ),),
+    return  GestureDetector(
+      onTap: (){
+        if(validation()){
+          AppConfig.hideKeyBoard();
+          AppConfig.showToast('validated');
+          publish();
+        }
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top:15.0,bottom: 15.0),
+        child: Neumorphic(
+          style: AppConfig.neuStyle,
+          boxShape: AppConfig.neuShape,
+          child: Container(
+            height: 55.0,
+            width: 374.0,
+            color: Colors.green,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Center(
+                child: Text('PUBLISH', style: TextStyle(
+                    fontFamily:AppConfig.roboto,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                ),),
+              ),
             ),
           ),
         ),
@@ -385,12 +403,46 @@ class _PostAdScreenState extends State<PostAdScreen> {
       PopupMenuItem(value: 5,child: Text('Pulses/Nuts',style: getStyle(),)),
       PopupMenuItem(value: 6,child: Text('Others',style: getStyle(),)),
     ],onSelected: (value)async{
+      categorySelected=true;
       switch(value){
         case 0:PostAdController.category.text='Vegetables';break;
+        case 1:PostAdController.category.text='Fruits';break;
+        case 2:PostAdController.category.text='Flowers';break;
+        case 3:PostAdController.category.text='Plants';break;
+        case 4:PostAdController.category.text='Grains/Spices';break;
+        case 5:PostAdController.category.text='Pulses/Nuts';break;
+        case 6:PostAdController.category.text='Others';break;
       }
     },
     icon: Icon(Icons.keyboard_arrow_down,color: Colors.green,),
       offset: Offset(0, 100),
     );
   }
+
+  bool validation() {
+      if(!categorySelected){
+        return AppConfig.showToast('Please select category');
+    }
+      if(PostAdController.purpose.text.trim()==''){
+        return AppConfig.showToast('Please enter purpose');
+      }
+    if(imageFile==null){
+      return AppConfig.showToast('Please add image');
+    }
+    if(PostAdController.aboutProduct.text.trim()==''){
+      return AppConfig.showToast('Please enter about the product');
+    }
+    if(PostAdController.quantity.text.trim()==''){
+      return AppConfig.showToast('Please enter quantity');
+    }
+    if(PostAdController.units.text.trim()==''){
+      return AppConfig.showToast('Please enter units');
+    }
+    if(PostAdController.price.text.trim()==''){
+      return AppConfig.showToast('Please enter price');
+    }
+    return true;
+  }
+
+  void publish() {}
 }

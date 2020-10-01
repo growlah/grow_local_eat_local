@@ -16,7 +16,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    SystemChannels.textInput.invokeMethod('TextInput.hide');
+    AppConfig.hideKeyBoard();
     super.initState();
     Future.delayed(const Duration(seconds: 4), () async {
       Navigator.pushReplacement(context,MaterialPageRoute(builder:(context)=>AuthenticationScreen()));

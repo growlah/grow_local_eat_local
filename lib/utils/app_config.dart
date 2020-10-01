@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grow_lah/utils/assets.dart';
 import 'package:grow_lah/utils/bazier_clip.dart';
 import 'package:grow_lah/view/notification.dart';
+import 'package:grow_lah/view/refer_earn.dart';
 
 class AppConfig{
   static String growLah='GrowLah';
@@ -61,10 +63,16 @@ class AppConfig{
             fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green),
       ),
       actions: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left:10.0,right: 10.0),
-          child: Image.asset(Assets.stock,color: Colors.green,height: 15.0,
-          width: 15.0,),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context)=>
+                ReferAndEarn()));
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left:10.0,right: 10.0),
+            child: Image.asset(Assets.stock,color: Colors.green,height: 15.0,
+            width: 15.0,),
+          ),
         ),
         showNotification?InkWell(
           onTap: (){
@@ -96,4 +104,6 @@ class AppConfig{
    bool isFocused}) =>
    null;
  }
+
+  static void hideKeyBoard()=>SystemChannels.textInput.invokeMethod('TextInput.hide');
 }
