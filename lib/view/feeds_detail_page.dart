@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grow_lah/model/feeds_model.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:grow_lah/utils/feeds_utils.dart';
 
 class FeedsDetail extends StatefulWidget {
@@ -29,7 +30,7 @@ class _FeedsDetailState extends State<FeedsDetail> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar("Feeds Detail", context,true),
+      appBar: AppConfig.appBar(CommonStrings.feedsDetail, context,true),
       body: Column(
         children: <Widget>[
           Padding(padding: const  EdgeInsets.only(left: 10.0),
@@ -63,14 +64,14 @@ class _FeedsDetailState extends State<FeedsDetail> {
                   });
                 },
                 child:getLikeIcon(feedsList.isLiked??false)),
-            Text(feedsList.likes.toString()+' likes',style: TextStyle(
+            Text(feedsList.likes.toString()+CommonStrings.likes,style: TextStyle(
               fontFamily:AppConfig.roboto,
             ),),
             Padding(
               padding: const EdgeInsets.only(left:8.0),
               child: Image.asset(Assets.comment,height: 20.0,width: 20.0,),
             ),
-            Text('0'+' comments',style: TextStyle( fontFamily:AppConfig.roboto,),),
+            Text('0'+CommonStrings.comments,style: TextStyle( fontFamily:AppConfig.roboto,),),
             // Padding(
             //   padding: const EdgeInsets.only(left:8.0),
             //   child: Image.asset(Assets.favBlack,height: 20.0,width: 20.0,),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class MySubscriptions extends StatefulWidget {
   MySubscriptions({Key key}) : super(key: key);
@@ -27,7 +28,7 @@ class _MySubscriptionsState extends State<MySubscriptions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppConfig.appBar('MY SUBSCRIPTIONS', context,true),
+      appBar: AppConfig.appBar(CommonStrings.mySubs, context,true),
       body: ListView.builder(
           shrinkWrap: true,
           itemCount: 2,

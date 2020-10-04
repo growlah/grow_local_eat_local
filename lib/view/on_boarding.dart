@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/model/on_boarding_model.dart';
 import 'package:grow_lah/utils/app_config.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:grow_lah/view/home_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   // AppConfig.clippedPath(context),
                   Padding(
                     padding: const EdgeInsets.only(top:150.0),
-                    child: Text('Select Category',style: TextStyle(color: Colors.green,fontSize: 18.0,
+                    child: Text(CommonStrings.selectCategory,style: TextStyle(color: Colors.green,fontSize: 18.0,
                         fontWeight: FontWeight.bold, fontFamily:AppConfig.roboto,),),
                   ),
                   Padding(

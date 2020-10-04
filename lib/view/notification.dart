@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class NotificationScreen extends StatefulWidget {
   NotificationScreen({Key key}) : super(key: key);
@@ -26,7 +27,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppConfig.appBar('NOTIFICATION', context,false),
+      appBar: AppConfig.appBar(CommonStrings.notifications, context,false),
       body: ListView.builder(
           shrinkWrap: true,
           itemCount: 2,
@@ -54,7 +55,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               Expanded(
                                 child: Padding(
                                   padding: const EdgeInsets.only(left:10.0),
-                                  child: Text('ALERT!',style: TextStyle(color: Colors.green,
+                                  child: Text(CommonStrings.alert,style: TextStyle(color: Colors.green,
                                       fontWeight: FontWeight.bold,fontSize: 14.0, fontFamily:AppConfig.roboto,),),
                                 ),
                               ),

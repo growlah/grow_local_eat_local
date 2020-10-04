@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class ScanAndSpot extends StatefulWidget {
   ScanAndSpot({Key key, this.imagePath}) : super(key: key);
@@ -32,7 +33,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('SCAN & SPOT', context,true),
+      appBar: AppConfig.appBar(CommonStrings.scanSpot, context,true),
       body:Container(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -90,7 +91,7 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left:10.0),
-                  child: Text('About',
+                  child: Text(CommonStrings.about,
                     style: TextStyle(
                         fontFamily:AppConfig.roboto,
                         color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
@@ -161,8 +162,8 @@ class _ScanAndSpotState extends State<ScanAndSpot> {
   }
 
   String getTitle(int position) {
-    return position==0?'Humidity':position==1?
-        'Light':'Temperature';
+    return position==0?CommonStrings.humidity:position==1?
+        CommonStrings.light:CommonStrings.temperature;
   }
 
   String getPercentage(int position) {

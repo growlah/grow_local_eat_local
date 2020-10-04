@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class BuyAndSellDetail extends StatefulWidget {
   BuyAndSellDetail({Key key}) : super(key: key);
@@ -27,7 +28,7 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('BUY/SELL', context,true),
+      appBar: AppConfig.appBar(CommonStrings.buyAndSell, context,true),
       body: Container(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -66,7 +67,7 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
-                        child: Text('Product Details',
+                        child: Text(CommonStrings.productDetails,
                           style: TextStyle(
                               fontFamily:AppConfig.roboto,
                               color: Colors.green,fontSize: 16.0,fontWeight: FontWeight.bold),),
@@ -108,7 +109,7 @@ class _BuyAndSellDetailState extends State<BuyAndSellDetail> {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
-              child: Text('BUY NOW', style: TextStyle(
+              child: Text(CommonStrings.buyNow, style: TextStyle(
                   fontFamily:AppConfig.roboto,
                   color: Colors.white,
                 fontWeight: FontWeight.bold

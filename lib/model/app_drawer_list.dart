@@ -1,15 +1,16 @@
 import 'package:grow_lah/model/app_drawer_model.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class AppDrawerList{
   static  List<AppDrawerModel> drawerList(){
     List<AppDrawerModel>drawer=[
-      AppDrawerModel(0, " My Profile"),
-      AppDrawerModel(1, "Donate"),
-      AppDrawerModel(2, "Settings"),
-      AppDrawerModel(3, "My Orders"),
-      AppDrawerModel(4, "Subscription"),
-      AppDrawerModel(5, "Refer & earn"),
-      AppDrawerModel(6, "LogOut"),
+      AppDrawerModel(0, CommonStrings.myProfile),
+      AppDrawerModel(1, CommonStrings.donate),
+      AppDrawerModel(2, CommonStrings.settings),
+      AppDrawerModel(3, CommonStrings.myOrders),
+      AppDrawerModel(4, CommonStrings.subscription),
+      AppDrawerModel(5, CommonStrings.referAndEarn),
+      AppDrawerModel(6, CommonStrings.logOut),
     ];
     return drawer;
   }

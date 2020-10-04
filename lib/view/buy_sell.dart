@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:grow_lah/view/buy_sell_detail.dart';
 
 class BuyAndSell extends StatefulWidget {
@@ -41,7 +42,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
           child: Icon(Icons.arrow_back_ios,color: Colors.green,size: 24,),
         ),
         title: Text(
-          'BUY/SELL',
+          CommonStrings.buyAndSell,
           style: TextStyle( fontFamily:AppConfig.roboto,
               fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green),
         ),
@@ -60,7 +61,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
            child: Row(
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: <Widget>[
-               Text('Top Seller',style: TextStyle(fontSize: 16.0,
+               Text(CommonStrings.topSeller,style: TextStyle(fontSize: 16.0,
                    fontFamily:AppConfig.roboto,
                color: Colors.green),),
               Image.asset(Assets.filter)
@@ -103,7 +104,7 @@ class _BuyAndSellState extends State<BuyAndSell> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left:8.0,top: 5.0),
-                                child: Text('Fertilizer',style: TextStyle(
+                                child: Text(CommonStrings.fertilizer,style: TextStyle(
                                     fontFamily:AppConfig.roboto,
                                   color: Colors.green,fontWeight: FontWeight.bold,
                                   fontSize: 14.0

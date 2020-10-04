@@ -1,3 +1,5 @@
+import 'package:grow_lah/utils/common_strings.dart';
+
 class OnBoardingModel{
   int id;
   String content;
@@ -8,9 +10,9 @@ class OnBoardingModel{
 class OnBoardingList{
   static onBoardingList(){
     List<OnBoardingModel> onBoards=[
-    OnBoardingModel(0, 'Gardening'),
-    OnBoardingModel(1, 'Farming'),
-    OnBoardingModel(2, 'Corp/Office'),
+    OnBoardingModel(0, CommonStrings.gardening),
+    OnBoardingModel(1, CommonStrings.farming),
+    OnBoardingModel(2, CommonStrings.corp),
       ];
     return onBoards;
   }

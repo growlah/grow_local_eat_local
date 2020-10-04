@@ -5,6 +5,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/model/message.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ChatBot extends StatefulWidget {
@@ -36,7 +37,7 @@ class _ChatBotState extends State<ChatBot> {
     // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding:true,
-        appBar: AppConfig.appBar('CHAT BOT', context, true),
+        appBar: AppConfig.appBar(CommonStrings.chatBot, context, true),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container( width: double.infinity,
@@ -91,7 +92,7 @@ class _ChatBotState extends State<ChatBot> {
                       textAlign: TextAlign.start,
                       maxLines: null,
                       decoration: InputDecoration(
-                        hintText: 'Type a message',
+                        hintText:CommonStrings.typeMessage,
                         hintStyle: TextStyle(
                           color: Colors.green,
                           fontFamily: AppConfig.roboto,
@@ -125,7 +126,7 @@ class _ChatBotState extends State<ChatBot> {
                   openCamera();
                 },
                 title: Center(
-                    child: Text('Camera',
+                    child: Text(CommonStrings.camera,
                         style: TextStyle(
                             fontFamily: AppConfig.roboto,
                             fontWeight: FontWeight.bold))),
@@ -137,7 +138,7 @@ class _ChatBotState extends State<ChatBot> {
                   openGallery();
                 },
                 title: Center(
-                    child: Text('Gallery',
+                    child: Text(CommonStrings.gallery,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: AppConfig.roboto,

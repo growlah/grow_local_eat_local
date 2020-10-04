@@ -1,15 +1,16 @@
 import 'package:grow_lah/model/settings_model.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class SettingsList{
   static getSettingsList(){
     List<SettingsModel>settingsList=[
-      SettingsModel(0,'Permissions',true),
-      SettingsModel(1,'Push Notifications',true),
-      SettingsModel(2,'Location Services',true),
-      SettingsModel(3,'Privacy policy',false),
-      SettingsModel(4,'Terms & Conditions',false),
-      SettingsModel(5,'App feedback',false),
-      SettingsModel(6,'Log Out',false)
+      SettingsModel(0,CommonStrings.permissions,true),
+      SettingsModel(1,CommonStrings.pushNotification,true),
+      SettingsModel(2,CommonStrings.locationServices,true),
+      SettingsModel(3,CommonStrings.privacyPolicy,false),
+      SettingsModel(4,CommonStrings.termsAndCondition,false),
+      SettingsModel(5,CommonStrings.appFeedback,false),
+      SettingsModel(6,CommonStrings.logOut,false)
     ];
     return settingsList;
   }

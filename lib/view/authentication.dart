@@ -6,6 +6,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/controller/authentiction_controller.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:grow_lah/view/home_screen.dart';
 import 'package:grow_lah/view/on_boarding.dart';
 
@@ -51,14 +52,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 children: <Widget>[
                   Padding(
                       padding: EdgeInsets.only(left:20.0,bottom: 10.0,top:150.0),
-                      child: Text(signUpClicked?'Welcome back':'Hello',style: TextStyle(
+                      child: Text(signUpClicked?CommonStrings.welcomeBack:CommonStrings.hello,style: TextStyle(
                           fontSize: 20.0,fontWeight: FontWeight.bold,
                           fontFamily:AppConfig.roboto,
                           color: Colors.green),)
                   ),
                   Padding(
                       padding: const EdgeInsets.only(left:20.0,bottom: 10.0),
-                      child:Text(signUpClicked?'Login !':'Sign Up!',style: TextStyle(
+                      child:Text(signUpClicked?CommonStrings.login:CommonStrings.signUp,style: TextStyle(
                           fontSize: 20.0,fontWeight: FontWeight.bold,
                           fontFamily:AppConfig.roboto,
                           color: Colors.green),)
@@ -87,7 +88,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           null,
                           decoration: InputDecoration(
                               contentPadding: const EdgeInsets.all(10.0),
-                              hintText:"User Name",
+                              hintText:CommonStrings.userName,
                               hintStyle: TextStyle(color: Colors.green),
                               border: InputBorder.none
                           ),
@@ -117,7 +118,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           null,
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.all(10.0),
-                              hintText: "Email Id",
+                              hintText: CommonStrings.emailId,
                               hintStyle: TextStyle(color: Colors.green),
                               border: InputBorder.none
                           ),
@@ -148,7 +149,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 bool isFocused}) =>
                           null,
                           decoration: InputDecoration(
-                              hintText:'Password',
+                              hintText:CommonStrings.password,
                               hintStyle: TextStyle(color: Colors.green),
                               contentPadding: EdgeInsets.all(10.0),
                               border: InputBorder.none
@@ -168,13 +169,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         boxShape: NeumorphicBoxShape.roundRect(BorderRadius.all(Radius.circular(25.0))),
                         child: InkWell(
                           onTap: (){
-                            SystemChannels.textInput.invokeMethod('TextInput.hide');
+                            AppConfig.hideKeyBoard();
                             if(signUpClicked&&checkEmailAndPassword()){
                               if(authenticate()){
                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
                                   OnBoardingScreen()));}
                               else{
-                                AppConfig.showToast('Please enter correct email and password');
+                                AppConfig.showToast(CommonStrings.enterMailAndPassword);
                               }
                             }
                             if(!signUpClicked){
@@ -182,7 +183,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                               userNameTextController.text==null||
                                   AuthenticationController.userNameTextController
                                       .text.trim()==''){
-                                return AppConfig.showToast('Please enter username');
+                                return AppConfig.showToast(CommonStrings.enterUserName);
                               }
                               checkEmailAndPassword();
                               setState(() {
@@ -200,7 +201,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                             height: 50.0,
                             width: 100.0,
                             child: Center(
-                              child: Text(signUpClicked?'login':'Sign Up',
+                              child: Text(signUpClicked?CommonStrings.login:CommonStrings.signUp,
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
@@ -217,7 +218,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text('Already have an account ?',
+                            Text(CommonStrings.alreadyHaveAcc,
                               style: TextStyle(color: Colors.green,
                                   fontFamily:AppConfig.roboto,
                                   fontSize: 16.0),),
@@ -228,7 +229,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   signUpClicked=true;
                                 });
                               },
-                              child: Text('Login',style: TextStyle(
+                              child: Text(CommonStrings.login1,style: TextStyle(
                                   fontSize: 18.0,
                                   fontFamily:AppConfig.roboto,
                                   color: Colors.green,
@@ -299,14 +300,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
     emailTextController.text==null||
         AuthenticationController.emailTextController
             .text.trim()==''){
-       AppConfig.showToast('Please enter email');
+       AppConfig.showToast(CommonStrings.enterEmail);
       return false;
     }
    else if(AuthenticationController.
     passwordController.text==null||
         AuthenticationController.passwordController
             .text.trim()==''){
-       AppConfig.showToast('Please enter password');
+       AppConfig.showToast(CommonStrings.enterPassword);
       return  false;
     }
    else return true;

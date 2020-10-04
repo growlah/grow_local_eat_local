@@ -2,6 +2,7 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:video_player/video_player.dart';
 
 class VideosScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _VideosScreenState extends State<VideosScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('VIDEO GUIDE', context,true),
+      appBar: AppConfig.appBar(CommonStrings.videoStory, context,true),
       body: SafeArea(
           child:Container(
             color: Colors.white12,

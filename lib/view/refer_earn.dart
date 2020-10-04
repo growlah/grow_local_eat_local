@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class ReferAndEarn extends StatefulWidget {
   ReferAndEarn({Key key}) : super(key: key);
@@ -122,7 +123,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Center(
-                          child: Text('My Referrals', style: TextStyle(
+                          child: Text(CommonStrings.myReferrals, style: TextStyle(
                               color: isSelected==2 ? Colors.green : Colors.grey,
                               fontFamily:AppConfig.roboto,fontWeight: FontWeight.bold
                           ),),
@@ -156,7 +157,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                               Text('40', style: TextStyle(
                                   fontFamily:AppConfig.roboto, color: Colors.white
                               ),),
-                              Text('Coins', style: TextStyle(
+                              Text(CommonStrings.coins, style: TextStyle(
                                   fontFamily:AppConfig.roboto,  color: Colors.white
                               ),),
                             ],
@@ -182,7 +183,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                               Text('40', style: TextStyle(
                                   fontFamily:AppConfig.roboto, color: Colors.white
                               ),),
-                              Text('Coins', style: TextStyle(
+                              Text(CommonStrings.coins, style: TextStyle(
                                   fontFamily:AppConfig.roboto,color: Colors.white
                               ),),
                             ],
@@ -251,7 +252,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('Your referral code', style: TextStyle(
+                          Text(CommonStrings.referCode, style: TextStyle(
                               fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0
                           ),),
                           Text('ABDHGJU123', style: TextStyle(
@@ -271,10 +272,10 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text('copy', style: TextStyle(
+                          Text(CommonStrings.copy, style: TextStyle(
                               fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0
                           ),),
-                          Text('code', style: TextStyle(
+                          Text(CommonStrings.code, style: TextStyle(
                             fontFamily:AppConfig.roboto, color: Colors.green, fontSize: 12.0,
                           ),)
                         ],

@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 import 'package:grow_lah/view/commuication_detail.dart';
 
 class CommunicationSection extends StatefulWidget {
@@ -29,7 +30,7 @@ class _CommunicationSectionState extends State<CommunicationSection> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar:AppConfig.appBar('Communication',context,true),
+      appBar:AppConfig.appBar(CommonStrings.communication,context,true),
       body: Padding(
         padding: const EdgeInsets.only(top:20.0),
         child: Container(

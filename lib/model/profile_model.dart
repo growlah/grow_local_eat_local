@@ -1,11 +1,13 @@
+import 'package:grow_lah/utils/common_strings.dart';
+
 class ProfileModel{
   static profileList(){
     List<dynamic> profileViewLists=[
-      'Select Language',
-      'Notifications',
-      'My Rewards',
-      'My Orders',
-      'Log Out'
+      CommonStrings.selectLanguage,
+      CommonStrings.notifications,
+      CommonStrings.myRewards,
+      CommonStrings.myOrders,
+      CommonStrings.logOut
     ];
     return profileViewLists;
   }

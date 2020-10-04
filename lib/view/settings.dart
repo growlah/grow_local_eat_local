@@ -5,6 +5,7 @@ import 'package:grow_lah/model/settings_list.dart';
 import 'package:grow_lah/model/settings_model.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class Settings extends StatefulWidget {
   Settings({Key key}) : super(key: key);
@@ -32,7 +33,7 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppConfig.appBar('SETTINGS', context,true),
+      appBar: AppConfig.appBar(CommonStrings.settings, context,true),
       body: Padding(
         padding: const EdgeInsets.only(top:20.0),
         child: ListView.builder(

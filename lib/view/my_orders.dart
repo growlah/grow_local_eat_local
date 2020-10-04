@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class MyOrders extends StatefulWidget {
   MyOrders({Key key}) : super(key: key);
@@ -27,7 +28,7 @@ class _MyOrdersState extends State<MyOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppConfig.appBar('MY ORDERS', context, true),
+      appBar: AppConfig.appBar(CommonStrings.myOrders, context, true),
       body: Padding(
         padding: const EdgeInsets.only(top:30.0),
         child: Neumorphic(

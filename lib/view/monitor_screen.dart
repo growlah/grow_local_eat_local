@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:grow_lah/utils/app_config.dart';
 import 'package:grow_lah/utils/assets.dart';
+import 'package:grow_lah/utils/common_strings.dart';
 
 class MonitorScreen extends StatefulWidget {
   MonitorScreen({Key key}) : super(key: key);
@@ -73,7 +74,7 @@ class _MonitorScreenState extends State<MonitorScreen> {
                 Icon(Icons.error_outline,color: Colors.red,),
                 Padding(
                   padding: const EdgeInsets.only(left:10.0),
-                  child: Text('ALERT!',style: TextStyle(color: Colors.green,
+                  child: Text(CommonStrings.alert,style: TextStyle(color: Colors.green,
                       fontFamily:AppConfig.roboto,
                   fontWeight: FontWeight.bold,fontSize: 20.0),),
                 )
@@ -145,7 +146,7 @@ class _MonitorScreenState extends State<MonitorScreen> {
               color: Colors.lightBlue[300],
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
-                child: Text('Partially cloudy',style: TextStyle(
+                child: Text(CommonStrings.partiallyCloudy,style: TextStyle(
                     color: Colors.white,fontSize: 12.0,
                 ),),
               ),
@@ -171,9 +172,9 @@ class _MonitorScreenState extends State<MonitorScreen> {
 
   String getTitle(int index) {
     switch(index){
-      case 0:return 'TODAY';break;
-      case 1:return 'TOMORROW';break;
-      case 2:return '10 DAYS';break;
+      case 0:return CommonStrings.today;break;
+      case 1:return CommonStrings.tomorrow;break;
+      case 2:return CommonStrings.tenDays;break;
     }
   }
 
@@ -288,9 +289,9 @@ class _MonitorScreenState extends State<MonitorScreen> {
 
   String getList(int position) {
     switch(position){
-      case 0: return 'Light';break;
-      case 1: return 'Humidity';break;
-      case 2: return 'Fertilizer';break;
+      case 0: return CommonStrings.light;break;
+      case 1: return CommonStrings.humidity;break;
+      case 2: return CommonStrings.fertilizer;break;
     }
   }
 
