@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grow_lah/utils/assets.dart';
-import 'package:grow_lah/utils/bazier_clip.dart';
 import 'package:grow_lah/view/notification.dart';
 import 'package:grow_lah/view/refer_earn.dart';
 
@@ -24,20 +23,6 @@ class AppConfig{
     Fluttertoast.showToast(
         msg: text, toastLength: Toast.LENGTH_SHORT, backgroundColor:Colors.grey);
   }
- static clippedPath(BuildContext context){
-    return ClipPath(
-   clipper: BezierClipper(0),
-   child: Container(
-     height:MediaQuery.of(context).size.height*0.25,
-     decoration:  BoxDecoration(
-       color: Colors.green,
-       boxShadow: [
-         BoxShadow(blurRadius: 10.0)
-       ],
-     ),
-   ),
- );
- }
  static divider(){
    return Divider(
      height: 2.0,
